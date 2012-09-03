@@ -1,0 +1,312 @@
+﻿body
+{
+	overflow-y:hidden;
+}
+
+/* ================ 顶部 开始 ======================== */
+#top
+{
+	border: solid blue 1px;
+	background: #3366CC;
+}
+
+#top li
+{
+	list-style: none;
+	display: inline;
+}
+
+#headerNav
+{
+	color: #FFC37B;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#headerNav a
+{
+	cursor: pointer;
+}
+
+#headerNav a:link,#headerNav a:visited
+{
+	color:#ffc37b;
+	}
+	
+#headerNav a:hover
+{
+	color: #fcee0a;
+	text-decoration: underline;
+}	
+
+#headerNav ul li span
+{
+	margin-left: 5px;
+}
+
+#headerNav ul
+{
+	background: url(../images/tab-bg.gif) repeat-x;
+	height: 18px;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+#lblMenuContainer div
+{
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+}
+
+#navIcon
+{
+	width: 21px;
+	height: 18px;
+	background: url(../images/tabv.gif);
+}
+
+#info
+{
+	text-align: right;
+	float: right;
+	padding-right:5px;
+}
+
+#menu
+{
+	background: url(../images/bk_nav.gif);
+	height: 25px;
+	color: White;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+
+#mainMenu
+{
+	padding-left: 10px;
+	height: 25px;
+	line-height: 25px;
+	border-bottom: solid 1px #EEEEEE;
+}
+
+#mainMenu div
+{
+	float: left;
+	text-align: center;
+	margin-left: -1px;
+}
+
+#mainMenu div a
+{
+	padding: 0 8px;
+	border-left: dotted 1px white;
+	border-right: dotted 1px white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#mainMenu .curSelected
+{
+	background: #EEEEEE;
+	border-bottom: #EEEEEE;
+	color: #0077ba;
+	cursor: default;
+}
+
+#mainMenu .curSelected a
+{
+	cursor: default;
+}
+
+#mainMenu .curSelected a:hover
+{
+	color: #0077ba;
+	cursor: default;
+}
+
+.menuSep
+{
+	width: 100%;	
+	height: 25px;
+	background: #EEEEEE;
+}
+
+#sysOperateMsg
+{
+	position:absolute;
+	top:100px;
+	left:48%;
+	height:21px;
+	line-height:21px;	
+	background:#FFFEA3;
+	display:none;
+}
+
+.errorMsg
+{
+    height:19px;
+    line-height:21px;
+    padding-left:22px;
+    background:url('../images/msg_error.gif') 2px 2px no-repeat #F9F7E0;
+    border:solid 1px red;    
+    font-weight:bold;
+}
+
+.successMsg
+{
+    height:19px;
+    line-height:21px;
+    padding-left:22px;
+    background:url('../images/msg_right.gif') 2px 2px no-repeat #F9F7E0;
+    border:solid 1px green;    
+    font-weight:bold;
+}	
+
+.normalMsg
+{
+    padding-left:2px;
+}
+
+/* ================ 顶部 结束 ======================== */
+
+/* ================ 下面 开始 ======================== */
+#down
+{
+    overflow:auto;
+}
+/* ================ 左边 开始 ==================*/
+
+#left
+{
+	width: 200px;
+	font: 13px black;
+	background: window;
+	overflow:auto;
+	float:left;
+}
+
+#pnlMenuItem
+{
+	padding: 5px 0 0 5px;
+}
+
+.leftMenu a
+{
+	color: Black;
+	padding: 2px;
+}
+
+.leftMenu tr
+{
+	height: 18px;
+	border: solid 1px red;
+}
+
+.leftMenu .hover
+{
+	color: White;
+	background: #808DB0;
+}
+
+.leftMenu .selected
+{
+	color: white;	
+	background: #0a246a;
+}
+
+/*收缩条*/
+#shrink
+{
+	width: 7px;
+	height: 100%;
+	position:absolute;
+	left:200px;
+	background-repeat: repeat-y;
+	background-image: url(../images/shrink-bg.gif);    
+}
+
+/*收缩按钮*/
+#shrink_btn
+{
+	cursor:pointer;
+	position:absolute;
+	top:45%;
+}
+
+/* ================ 左边 结束 ==================*/
+
+/* ================ 内容 开始 ==================*/
+
+#content
+{	
+    padding-left:7px;
+	overflow:hidden;
+}
+
+#curLocationNav
+{
+	width:100%;	
+	height:25px;
+	line-height:25px;
+	border-top:solid 1px black;
+	border-bottom:solid 1px black;
+}
+
+.down_right
+{
+    width:100%; 
+    overflow:hidden;  
+}
+
+.mainFrame
+{
+	width: 100%;
+	height: 100%;	
+	text-align:center;	
+	/*padding:5px 0.5%;*/
+}
+
+#main_frame_box
+{
+    width:100%;
+}
+    
+#notice
+{
+	float: left;
+	width: 50%;
+	height:25px;
+	margin-left:7px;
+	overflow: hidden;	
+	vertical-align:middle;
+	line-height:25px;
+}
+
+#pageDo
+{
+	float: right;
+	text-align: right;
+}
+
+#pageDo span
+{
+	display:inline-block;
+	margin-right:1px;
+	cursor:pointer;	
+	width:56px;
+}
+
+/* ================ 内容 结束 ==================*/
+
+/* ================ 下面 结束 ======================== */
+
+
+
+/*============= 修改密码 开始============*/
+.thickBoxContent .renewPassword
+{
+    width:80px;
+    margin-left:-8px;
+}
+/*============= 修改密码 结束============*/

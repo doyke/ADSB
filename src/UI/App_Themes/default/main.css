@@ -1,0 +1,171 @@
+﻿*
+{
+    margin: 0;
+    padding: 0;
+    font-size:12px;
+}
+
+input[type="text"]
+{
+    padding: 2px;
+    border: 1px #999999 solid;
+    border-radius: 2px;
+}
+
+a
+{
+    text-decoration:none;
+    color:#1D5987;
+}
+
+a:active
+{
+    color:#E17009;
+}
+
+ul
+{
+}
+
+li
+{
+    list-style: none;
+}
+
+fieldset legend 
+{
+    padding-left: 50px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.row
+{
+    margin-bottom: 8px;
+}
+
+.label
+{
+    width: 200px;
+    float: left;
+    text-align: right;
+}
+
+.value
+{
+    margin-left: 204px;
+    text-align: left;
+}
+
+.text_active
+{
+    background: #FFFEA3;
+    border: solid 1px #3366CC !important;
+    border-radius: 2px;
+}
+
+.set_legend
+{
+    background: url("../../images/legend.jpg") 6px 50% no-repeat;
+    height: 45px;
+    line-height: 45px;
+}
+
+.require span
+{
+    color:Red;
+}
+
+/* ================ 数据表 开始 ====================== */
+.data_list
+{
+    width:100%;
+    border:solid #A7DFFB 1px;
+}
+
+.data_list tr
+{
+    height:25px;    
+}
+
+.data_list td,.data_list th
+{
+    border:0;
+    text-align:center;
+}
+
+.data_list th
+{
+    cursor:default;
+    color: #0f65c5; 
+    height:28px;
+    background:url(../../images/th-bg.gif);
+}
+
+.data_header
+{
+	height: 30px;
+	background: url(../../images/note.gif) 2px no-repeat #E4F4FF;	
+	border: solid 1px #4caff5;
+	margin-top: 10px;
+	
+}
+
+.data_header .title
+{
+	font-weight: bold;
+	position:absolute;
+	left:20px;
+	height:30px;
+	line-height:30px;
+}
+
+.data_header .operate
+{
+	position:absolute;
+	right:0;
+	height:30px;
+	line-height:30px;
+}
+
+.trOdd
+{
+	background-color: #e5ecfd;
+}
+
+.trOdd TD
+{
+	background-color: #e5ecfd;
+}
+
+.trEven
+{
+	background-color: white;
+}
+
+.trEven TD
+{
+	background-color: white;
+}
+
+.trHover
+{
+	background-color: #f1f5fd;
+}
+
+.trHover TD
+{
+	background-color: #f1f5fd;
+}
+
+.trSelected
+{
+	background-color: #fffea3;
+}
+
+.trSelected TD
+{
+	background-color: #fffea3;
+}
+
+/* ================ 数据表 结束 ====================== */

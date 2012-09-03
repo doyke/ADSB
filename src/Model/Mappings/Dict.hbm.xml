@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="BruceFramework.Model"
+                   namespace="BruceFramework.Model">
+  <class name="Dict">
+    <id name="DictID">
+      <generator class="identity"/>
+    </id>    
+    <property name="Code"/>
+    <property name="DictName"/>
+    <property name="Remark"/>
+    <property name="IsEnable"/>
+    <property name="CreateBy"/>
+    <property name="CreateDate"/>
+    <property name="LastUpdateBy"/>
+    <property name="LastUpdateDate"/>
+  </class>
+  
+</hibernate-mapping>

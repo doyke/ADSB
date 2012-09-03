@@ -1,0 +1,54 @@
+<script language="JavaScript">
+	
+	var innerPageURL;
+	var title;
+	
+	/*取出输入参数*/
+	function getInPara()
+	{
+		var inPara=window.dialogArguments;
+		innerPageURL=inPara[0];
+		title=inPara[1];
+	}
+	
+	function writeHead()
+	{
+		out = "<html>"
+		out += "<head>"
+		out += "<title>";
+		out += title;
+		out += "</title>"
+		out += "</head>";
+		out += "<body>";
+		out += "<table width='100%' height='100%' border=0 align='center' cellpadding=0 cellspacing=0><tr><td valign='middle'>"
+		document.write(out);
+	}
+	
+	function writeFrame()
+	{
+		out ='<iframe src="';
+		out += innerPageURL;
+		out += '" height=100% width=100% frameBorder=no ></iframe>';
+		document.write(out);
+	}
+	
+	function writeFoot()
+	{
+		out = "</td></tr></table>"
+		out += "</body>";
+		out += "</html>";
+	}
+	function loadPage()
+	{
+		/*取出输入参数*/
+		getInPara();
+		/*生成页面头部内容*/
+		writeHead();
+		/*生成主体框架*/
+		writeFrame();
+		/*生成页面结束内容*/
+		writeFoot();
+
+	}
+	loadPage();
+</script>
