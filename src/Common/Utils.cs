@@ -13,7 +13,7 @@ using Microsoft.VisualBasic;
 using System.Collections;
 using System.Net;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
     /// <summary>
     /// 工具类

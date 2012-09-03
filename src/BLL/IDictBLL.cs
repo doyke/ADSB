@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-using BruceFramework.Model;
+using ADSL.Model;
 
-namespace BruceFramework.BLL
+namespace ADSL.BLL
 {
     public interface IDictBLL : IBaseBLL
     {

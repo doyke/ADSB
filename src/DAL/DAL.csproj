@@ -8,7 +8,7 @@
     <ProjectGuid>{DB2A3371-9D0D-4573-A0F9-10A68CD941AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BruceFramework.DAL</RootNamespace>
+    <RootNamespace>ADSL.DAL</RootNamespace>
     <AssemblyName>BruceFramework.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

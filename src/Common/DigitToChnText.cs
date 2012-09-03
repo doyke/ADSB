@@ -7,7 +7,7 @@
 using System;
 using System.Text;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
     /// 类 名 称:DigitToChnText
     /// 编码人员:卢小龙

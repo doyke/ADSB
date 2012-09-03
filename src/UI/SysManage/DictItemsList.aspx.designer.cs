@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace BruceFramework.UI.SysManage {
+namespace ADSL.UI.SysManage {
     
     
     public partial class DictItemsList {

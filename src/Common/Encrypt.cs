@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
     /// <summary> 
     /// º”√‹

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-using BruceFramework.Model;
-using BruceFramework.DAL;
+using ADSL.Model;
+using ADSL.DAL;
 
-namespace BruceFramework.BLL
+namespace ADSL.BLL
 {
     public class DictBLL : BaseBLL, IDictBLL
     {

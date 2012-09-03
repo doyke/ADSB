@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
     public class DirectoryUtil
     {

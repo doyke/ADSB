@@ -1,7 +1,7 @@
 using System; 
 using System.Runtime.InteropServices;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
 
     #region how use this?

@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 
 using NHibernate;
 
-using BruceFramework.Model;
+using ADSL.Model;
 
-namespace BruceFramework.DAL
+namespace ADSL.DAL
 {
     public class DictDAL : BaseDAL, IDictDAL
     {

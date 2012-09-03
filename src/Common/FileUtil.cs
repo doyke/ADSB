@@ -5,7 +5,7 @@ using System.Collections;
 using System.IO;
 using System.Web;
 
-namespace BruceFramework.Common
+namespace ADSL.Common
 {
     /// <summary>
     /// 在指定路径下查找图片

@@ -3,7 +3,7 @@
 版权所有：版权所有(C) 2012
 文件名称：IDictItemsBLL.cs
 系统编号：BF_SYS002
-系统名称：BruceFrame框架
+系统名称：ADSB框架
 组件编号：BF_CN001
 组件名称：基本表
 设计作者：自动生成
@@ -16,9 +16,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq.Expressions;
 
-using BruceFramework.Model;
+using ADSL.Model;
 
-namespace BruceFramework.BLL
+namespace ADSL.BLL
 {
     /// <summary>
     /// 接口名称：IDictItemsBLL

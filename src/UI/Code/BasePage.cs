@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
-namespace BruceFramework.UI.Code
+namespace ADSL.UI.Code
 {
     public class BasePage : Page
     {

@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using BruceFramework.UI.Code;
-using BruceFramework.Common;
-using BruceFramework.BLL;
-using BruceFramework.Model;
+using ADSL.UI.Code;
+using ADSL.Common;
+using ADSL.BLL;
+using ADSL.Model;
 
-namespace BruceFramework.UI.SysManage
+namespace ADSL.UI.SysManage
 {
     public partial class DictItemsEdit : BasePage
     {

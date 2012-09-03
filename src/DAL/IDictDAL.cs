@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-using BruceFramework.Model;
+using ADSL.Model;
 using System.Linq.Expressions;
 
-namespace BruceFramework.DAL
+namespace ADSL.DAL
 {
     public interface IDictDAL : IBaseDAL
     {
