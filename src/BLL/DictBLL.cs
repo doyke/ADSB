@@ -9,7 +9,7 @@ using ADSL.DAL;
 
 namespace ADSL.BLL
 {
-    public class DictBLL : BaseBLL, IDictBLL
+    public class DictBLL : IDictBLL
     {
         IDictDAL dal = new DictDAL();
 

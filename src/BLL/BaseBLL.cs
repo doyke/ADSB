@@ -28,29 +28,29 @@ namespace ADSL.BLL
     /// </summary>    
     public class BaseBLL : IBaseBLL
     {
-        IBaseDAL dal = new BaseDAL();
+        private static IBaseDAL dal = new BaseDAL();
 
-        public object Add<T>(T model) where T : class
+        public static object Add<T>(T model) where T : class
         {
             return dal.Add<T>(model);
         }
 
-        public void Update<T>(T model) where T : class
+        public static void Update<T>(T model) where T : class
         {
             dal.Update<T>(model);
         }
 
-        public void Delete<T>(T model) where T : class
+        public static void Delete<T>(T model) where T : class
         {
             dal.Delete<T>(model);
         }
 
-        public IList<T> GetList<T>(Expression<Func<T, bool>> condition) where T : class
+        public static IList<T> GetList<T>(Expression<Func<T, bool>> condition) where T : class
         {
             return dal.GetList<T>(condition);
         }
 
-        public IList<T> GetList<T>(Expression<Func<T, bool>> where, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
+        public static IList<T> GetList<T>(Expression<Func<T, bool>> where, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
         {
             return dal.GetList<T>(where,pageIndex, pageSize, out rowCount, out pageCount);
         }
@@ -60,7 +60,7 @@ namespace ADSL.BLL
         /// </summary>
         /// <typeparam name="T">类型</typeparam>
         /// <param name="where">判断重复的条件</param>
-        public bool IsExists<T>(Expression<Func<T, bool>> existsCondition) where T : class
+        public static bool IsExists<T>(Expression<Func<T, bool>> existsCondition) where T : class
         {
             return dal.IsExists<T>(existsCondition);
         }

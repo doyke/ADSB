@@ -28,13 +28,13 @@ namespace ADSL.BLL
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
-    public class DictItemsBLL : BaseBLL, IDictItemsBLL
+    public class DictItemsBLL : IDictItemsBLL
     {
         IDictItemsDAL dal = new DictItemsDAL();
 
         public DictItems GetModel(string itemID)
         {
-            IList<DictItems> lstItems = GetList<DictItems>(item => item.DictItemID == TypeParse.Object2Int32(itemID,0));
+            IList<DictItems> lstItems = BaseBLL.GetList<DictItems>(item => item.DictItemID == TypeParse.Object2Int32(itemID,0));
 
             if (lstItems != null && lstItems.Count > 0)
             {

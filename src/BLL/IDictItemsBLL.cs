@@ -26,7 +26,7 @@ namespace ADSL.BLL
     /// 编码作者：自动生成
     /// 内容摘要：包含操作的接口
     /// </summary>    
-    public interface IDictItemsBLL : IBaseBLL
+    public interface IDictItemsBLL
     {
         DictItems GetModel(string itemID);        
     }

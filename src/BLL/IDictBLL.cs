@@ -8,7 +8,7 @@ using ADSL.Model;
 
 namespace ADSL.BLL
 {
-    public interface IDictBLL : IBaseBLL
+    public interface IDictBLL
     {
         Dict GetModel(int dictID);
         bool IsExistsCode(string code);
