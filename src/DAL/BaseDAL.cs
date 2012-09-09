@@ -20,7 +20,7 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Criterion;
 
-namespace ADSL.DAL
+namespace ADSB.DAL
 {
     /// <summary>
     /// 类 名 称：BaseDAL

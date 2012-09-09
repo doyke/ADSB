@@ -13,7 +13,7 @@ using Microsoft.VisualBasic;
 using System.Collections;
 using System.Net;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     /// <summary>
     /// 工具类

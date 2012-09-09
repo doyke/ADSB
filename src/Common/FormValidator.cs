@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     public class FormValidator
     {

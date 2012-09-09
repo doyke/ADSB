@@ -37,12 +37,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseBLL.cs" />
     <Compile Include="DictBLL.cs" />
     <Compile Include="DictItemsBLL.cs" />
-    <Compile Include="IBaseBLL.cs" />
     <Compile Include="IDictBLL.cs" />
     <Compile Include="IDictItemsBLL.cs" />
+    <Compile Include="IFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,4 @@
-﻿
-/*
+﻿/*
 版权所有：版权所有(C) 2012
 文件名称：IDictItemsBLL.cs
 系统编号：BF_SYS002
@@ -16,9 +15,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq.Expressions;
 
-using ADSL.Model;
+using ADSB.Model;
 
-namespace ADSL.BLL
+namespace ADSB.BLL
 {
     /// <summary>
     /// 接口名称：IDictItemsBLL
@@ -28,6 +27,12 @@ namespace ADSL.BLL
     /// </summary>    
     public interface IDictItemsBLL
     {
-        DictItems GetModel(string itemID);        
+        DictItems GetModel(string itemID);
+        object Add(DictItems model);
+        void Update(DictItems model);
+        void Delete(DictItems model);
+        bool IsExists(Expression<Func<DictItems, bool>> condition);
+        IList<DictItems> GetList(Expression<Func<DictItems, bool>> condition);
+        IList<DictItems> GetList(Expression<Func<DictItems, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount);
     }
 }

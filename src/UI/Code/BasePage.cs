@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
-namespace ADSL.UI.Code
+namespace ADSB.UI.Code
 {
     public class BasePage : Page
     {

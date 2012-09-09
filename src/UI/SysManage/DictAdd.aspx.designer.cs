@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace ADSL.UI.SysManage {
+namespace ADSB.UI.SysManage {
     
     
     public partial class DictAdd {

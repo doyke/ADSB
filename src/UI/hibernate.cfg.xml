@@ -8,6 +8,6 @@
 
     <property name="show_sql">true</property>
     
-    <mapping assembly="BruceFramework.Model"/>
+    <mapping assembly="ADSB.Model"/>
   </session-factory>
 </hibernate-configuration>

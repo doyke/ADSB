@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Text.RegularExpressions;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     /// <summary>
     /// XmlDocument扩展类

@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     public class DirectoryUtil
     {

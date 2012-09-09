@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 
 using NHibernate;
 
-using ADSL.Model;
+using ADSB.Model;
 
-namespace ADSL.DAL
+namespace ADSB.DAL
 {
     public class DictDAL : BaseDAL, IDictDAL
     {

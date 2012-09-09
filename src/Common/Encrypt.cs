@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     /// <summary> 
     /// º”√‹

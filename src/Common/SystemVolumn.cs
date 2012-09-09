@@ -1,7 +1,7 @@
 using System; 
 using System.Runtime.InteropServices;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
 
     #region how use this?

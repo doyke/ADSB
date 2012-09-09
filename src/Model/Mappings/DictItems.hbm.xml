@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="BruceFramework.Model" assembly="BruceFramework.Model">
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ADSB.Model" assembly="ADSB.Model">
   <class name="DictItems">
     <id name="DictItemID">
       <generator class="identity"/>

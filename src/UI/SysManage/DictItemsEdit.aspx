@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DictItemsEdit.aspx.cs" Inherits="BruceFramework.UI.SysManage.DictItemsEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DictItemsEdit.aspx.cs" Inherits="ADSB.UI.SysManage.DictItemsEdit" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

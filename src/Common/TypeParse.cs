@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     public class TypeParse
     {

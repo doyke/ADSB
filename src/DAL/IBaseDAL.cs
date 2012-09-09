@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace ADSL.DAL
+namespace ADSB.DAL
 {
     /// <summary>
     /// 接口名称：IBaseDAL

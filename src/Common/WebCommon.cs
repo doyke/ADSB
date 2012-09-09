@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     public class WebCommon
     {

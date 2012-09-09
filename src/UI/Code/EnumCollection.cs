@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ADSL.UI
+namespace ADSB.UI
 {
     public class OperateMode
     {

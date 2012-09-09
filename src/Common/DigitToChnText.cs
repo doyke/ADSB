@@ -7,7 +7,7 @@
 using System;
 using System.Text;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
     /// 类 名 称:DigitToChnText
     /// 编码人员:卢小龙

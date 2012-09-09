@@ -17,9 +17,9 @@ using System.Linq.Expressions;
 
 using NHibernate;
 
-using ADSL.Model;
+using ADSB.Model;
 
-namespace ADSL.DAL
+namespace ADSB.DAL
 {
     /// <summary>
     /// 类 名 称：DictItemsDAL

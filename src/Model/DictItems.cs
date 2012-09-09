@@ -14,7 +14,7 @@
 
 using System;
 
-namespace ADSL.Model
+namespace ADSB.Model
 {
     /// <summary>
     /// 类 名 称：DictItems

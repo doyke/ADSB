@@ -5,14 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using ADSL.UI.Code;
-using ADSL.BLL;
-using ADSL.Model;
+using ADSB.UI.Code;
+using ADSB.BLL;
+using ADSB.Model;
 using NHibernate.Cfg;
 using NHibernate;
-using ADSL.Common;
+using ADSB.Common;
 
-namespace ADSL.UI.SysManage
+namespace ADSB.UI.SysManage
 {
     public partial class DictAdd : BasePage
     {

@@ -5,7 +5,7 @@ using System.Xml;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ADSL.Common
+namespace ADSB.Common
 {
 	/// <summary>
 	/// SerializationHelper 的摘要说明。

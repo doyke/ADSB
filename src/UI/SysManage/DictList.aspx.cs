@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using ADSL.BLL;
-using ADSL.Model;
-using ADSL.UI.Code;
-using ADSL.Common;
+using ADSB.BLL;
+using ADSB.Model;
+using ADSB.UI.Code;
+using ADSB.Common;
 
-namespace ADSL.UI.SysManage
+namespace ADSB.UI.SysManage
 {
     public partial class DictList : BasePage
     {
@@ -37,7 +37,7 @@ namespace ADSL.UI.SysManage
             int rowCount;
             int pageCount;
 
-            IList<Dict> lstData = dictBll.GetList<Dict>(dict => dict.DictID == dict.DictID, 1, 1000000, out rowCount, out pageCount);
+            IList<Dict> lstData = dictBll.GetList(dict => dict.DictID == dict.DictID, 1, 1000000, out rowCount, out pageCount);
             gvList.DataSource = lstData;
             gvList.DataBind();
         }
@@ -54,7 +54,7 @@ namespace ADSL.UI.SysManage
 
             if (e.CommandName == "del")
             {
-                dictBll.Delete<Dict>(new Dict { DictID = TypeParse.Object2Int32(arg, 0) });
+                dictBll.Delete(new Dict { DictID = TypeParse.Object2Int32(arg, 0) });
                 WebCommon.DialogSuccessMsg(this, "删除成功！");
             }
 
