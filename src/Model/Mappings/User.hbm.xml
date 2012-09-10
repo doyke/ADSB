@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ADSB.Model" assembly="ADSB.Model">
+    <class name="User">
+       <id name="UserID">
+         <generator class="identity"/>
+       </id>
+       <property name="UserName"/>
+       <property name="RealName"/>
+       <property name="Password"/>
+       <property name="Age"/>
+       <property name="Sex"/>
+       <property name="Education"/>
+       <property name="Tel"/>
+       <property name="Email"/>
+       <property name="Mobile"/>
+       <property name="QQ"/>
+       <property name="Birthday"/>
+       <property name="Status"/>
+       <property name="Address"/>
+       <property name="Company"/>
+       <property name="LastLoginIP"/>
+       <property name="LastLoginDate"/>
+       <property name="Question"/>
+       <property name="Answer"/>
+       <property name="Remark"/>
+       <property name="IsEnable"/>
+       <property name="CreateBy"/>
+       <property name="CreateDate"/>
+       <property name="CreatorName"/>
+       <property name="LastUpdateBy"/>
+       <property name="LastUpdateByName"/>
+       <property name="LastUpdateDate"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ADSB.Model" assembly="ADSB.Model">
+    <class name="DepartmentUser">
+       <id name="DeptUserID">
+         <generator class="identity"/>
+       </id>
+       <property name="DeptID"/>
+       <property name="DeptName"/>
+       <property name="UserID"/>
+       <property name="UserName"/>
+    </class>
+</hibernate-mapping>

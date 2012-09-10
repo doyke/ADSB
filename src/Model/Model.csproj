@@ -37,9 +37,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorize.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="DepartmentPosition.cs" />
+    <Compile Include="DepartmentUser.cs" />
     <Compile Include="Dict.cs" />
     <Compile Include="DictItems.cs" />
+    <Compile Include="FunctionCategory.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserDepartmentPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\Dict.hbm.xml">
@@ -48,6 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mappings\DictItems.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Authorize.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Department.hbm.xml" />
+    <EmbeddedResource Include="Mappings\DepartmentPosition.hbm.xml" />
+    <EmbeddedResource Include="Mappings\DepartmentUser.hbm.xml" />
+    <EmbeddedResource Include="Mappings\FunctionCategory.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Functions.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Position.hbm.xml" />
+    <EmbeddedResource Include="Mappings\User.hbm.xml" />
+    <EmbeddedResource Include="Mappings\UserDepartmentPosition.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

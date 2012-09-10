@@ -48,13 +48,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizeDAL.cs" />
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="DepartmentDAL.cs" />
+    <Compile Include="DepartmentPositionDAL.cs" />
+    <Compile Include="DepartmentUserDAL.cs" />
     <Compile Include="DictDAL.cs" />
     <Compile Include="DictItemsDAL.cs" />
+    <Compile Include="FunctionCategoryDAL.cs" />
+    <Compile Include="FunctionsDAL.cs" />
+    <Compile Include="IAuthorizeDAL.cs" />
     <Compile Include="IBaseDAL.cs" />
+    <Compile Include="IDepartmentDAL.cs" />
+    <Compile Include="IDepartmentPositionDAL.cs" />
+    <Compile Include="IDepartmentUserDAL.cs" />
     <Compile Include="IDictDAL.cs" />
     <Compile Include="IDictItemsDAL.cs" />
+    <Compile Include="IFunctionCategoryDAL.cs" />
+    <Compile Include="IFunctionsDAL.cs" />
+    <Compile Include="IPositionDAL.cs" />
+    <Compile Include="IUserDAL.cs" />
+    <Compile Include="IUserDepartmentPositionDAL.cs" />
+    <Compile Include="PositionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="UserDepartmentPositionDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
