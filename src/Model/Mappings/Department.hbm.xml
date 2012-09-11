@@ -7,6 +7,9 @@
        <property name="DeptName"/>
        <property name="ShotDeptName"/>
        <property name="ParentDept"/>
+       <property name="Address"/>
+       <property name="Tel"/>
+       <property name="Mobile"/>
        <property name="Remark"/>
        <property name="IsEnable"/>
        <property name="CreateBy"/>

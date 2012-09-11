@@ -6,7 +6,7 @@
 组件编号：ADSB_CN002
 组件名称：基本表
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-09-11
 内容摘要：IDepartmentBLL接口
 */
 
@@ -21,7 +21,7 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 接口名称：IDepartmentBLL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-09-11
     /// 编码作者：自动生成
     /// 内容摘要：包含操作的接口
     /// </summary>    
@@ -29,13 +29,12 @@ namespace ADSB.BLL
     {
         #region 自动生成
         object Add(Department model);
+        Department GetModel(System.Int32 key);
         void Update(Department model);
         void Delete(Department model);
         bool IsExists(Expression<Func<Department, bool>> condition);
         IList<Department> GetList(Expression<Func<Department, bool>> condition);
         IList<Department> GetList(Expression<Func<Department, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount);
         #endregion
-
-        Department GetModel(int DeptID);
     }
 }    

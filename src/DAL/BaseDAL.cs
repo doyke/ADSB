@@ -100,18 +100,18 @@ namespace ADSB.DAL
             {
                 using (ITransaction tran = session.BeginTransaction())
                 {
-                    rowCount = session.QueryOver<T>().Where(condition).RowCount();
-                    pageCount = this.GetPageCount(rowCount, pageCount);
-
                     if (condition == null)
                     {
+                        rowCount = session.QueryOver<T>().RowCount();
                         result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
                     }
                     else
                     {
+                        rowCount = session.QueryOver<T>().Where(condition).RowCount();
                         result = session.QueryOver<T>().Where(condition).Skip((pageIndex - 1) * pageSize).List<T>();
                     }
 
+                    pageCount = this.GetPageCount(rowCount, pageCount);
                     tran.Commit();
                 }
             }

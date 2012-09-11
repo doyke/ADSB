@@ -6,7 +6,7 @@
 组件编号：ADSB_CN002
 组件名称：基本表
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-09-11
 内容摘要：DepartmentBLL业务类
 */
 
@@ -24,17 +24,14 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 类 名 称：DepartmentBLL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-09-11
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
     public class DepartmentBLL : IDepartmentBLL
     {
-        #region 变量区
         IDepartmentDAL dal = new DepartmentDAL();
-        #endregion
-
-        #region 方法区
+        
         #region 自动生成
         /// <summary>
         /// 新增
@@ -44,6 +41,23 @@ namespace ADSB.BLL
         public object Add(Department model)
         {
             return dal.Add<Department>(model);
+        }
+        
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="key">关键字值</param>
+        /// <returns>实体</returns>
+        public Department GetModel(System.Int32 key)
+        {
+            IList<Department> lstData = dal.GetList<Department>(m => m.DeptID == key);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -96,24 +110,6 @@ namespace ADSB.BLL
         public IList<Department> GetList(Expression<Func<Department, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
         {
             return dal.GetList<Department>(condition, pageIndex, pageSize, out rowCount, out pageCount);
-        }
-        #endregion
-
-        /// <summary>
-        /// 获取实体
-        /// </summary>
-        /// <param name="deptID">部门编号</param>
-        /// <returns></returns>
-        public Department GetModel(int deptID)
-        {
-            IList<Department> lstData = dal.GetList<Department>(dept => dept.DeptID == deptID);
-
-            if (lstData != null && lstData.Count > 0)
-            {
-                return lstData[0];
-            }
-
-            return null;
         }
         #endregion
     }
