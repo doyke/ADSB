@@ -112,6 +112,12 @@
     <Content Include="SysManage\DictItemsEdit.aspx" />
     <Content Include="SysManage\DictItemsList.aspx" />
     <Content Include="SysManage\DictList.aspx" />
+    <Content Include="UserManage\DepartmentEdit.aspx" />
+    <Content Include="UserManage\DepartmentList.aspx" />
+    <Content Include="UserManage\PositionEdit.aspx" />
+    <Content Include="UserManage\PositionList.aspx" />
+    <Content Include="UserManage\UserEdit.aspx" />
+    <Content Include="UserManage\UserList.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -160,6 +166,48 @@
     </Compile>
     <Compile Include="SysManage\DictList.aspx.designer.cs">
       <DependentUpon>DictList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\DepartmentEdit.aspx.cs">
+      <DependentUpon>DepartmentEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\DepartmentEdit.aspx.designer.cs">
+      <DependentUpon>DepartmentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\DepartmentList.aspx.cs">
+      <DependentUpon>DepartmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\DepartmentList.aspx.designer.cs">
+      <DependentUpon>DepartmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\PositionEdit.aspx.cs">
+      <DependentUpon>PositionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\PositionEdit.aspx.designer.cs">
+      <DependentUpon>PositionEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\PositionList.aspx.cs">
+      <DependentUpon>PositionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\PositionList.aspx.designer.cs">
+      <DependentUpon>PositionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

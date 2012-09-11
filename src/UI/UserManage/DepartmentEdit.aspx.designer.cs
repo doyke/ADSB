@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ADSB.UI.SysManage {
+namespace ADSB.UI.UserManage {
     
     
-    public partial class DictItemsEdit {
+    public partial class DepartmentEdit {
         
         /// <summary>
         /// form1 control.
@@ -40,22 +40,31 @@ namespace ADSB.UI.SysManage {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtItemCode;
         
         /// <summary>
-        /// txtName control.
+        /// txtAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAddress;
         
         /// <summary>
-        /// txtItemValue control.
+        /// txtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtItemValue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPhone;
+        
+        /// <summary>
+        /// txtFax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtFax;
         
         /// <summary>
         /// txtRemark control.

@@ -48,6 +48,7 @@ namespace ADSB.DAL
             return fac.OpenSession();
         }
 
+        #region IBasicDAL实现
         /// <summary>
         /// 获取列表
         /// </summary>
@@ -82,13 +83,13 @@ namespace ADSB.DAL
         /// 获取分布列表
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="where"></param>
+        /// <param name="condition"></param>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <param name="rowCount"></param>
         /// <param name="pageCount"></param>
         /// <returns></returns>
-        public IList<T> GetList<T>(Expression<Func<T, bool>> where, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
+        public IList<T> GetList<T>(Expression<Func<T, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
         {
             rowCount = 0;
             pageCount = 1;
@@ -99,16 +100,16 @@ namespace ADSB.DAL
             {
                 using (ITransaction tran = session.BeginTransaction())
                 {
-                    rowCount = session.QueryOver<T>().Where(where).RowCount();
+                    rowCount = session.QueryOver<T>().Where(condition).RowCount();
                     pageCount = this.GetPageCount(rowCount, pageCount);
 
-                    if (where == null)
+                    if (condition == null)
                     {
                         result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
                     }
                     else
                     {
-                        result = session.QueryOver<T>().Where(where).Skip((pageIndex - 1) * pageSize).List<T>();
+                        result = session.QueryOver<T>().Where(condition).Skip((pageIndex - 1) * pageSize).List<T>();
                     }
 
                     tran.Commit();
@@ -200,5 +201,6 @@ namespace ADSB.DAL
                 return session.QueryOver<T>().Where(existsCondition).RowCount() > 0;
             }
         }
+        #endregion
     }
 }

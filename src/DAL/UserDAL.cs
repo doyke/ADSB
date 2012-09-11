@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq.Expressions;
+using System.Data;
 
 using NHibernate;
 
@@ -29,5 +30,18 @@ namespace ADSB.DAL
     /// </summary>    
     public class UserDAL : BaseDAL, IUserDAL
     {
+        /// <summary>
+        /// 分页获取列表
+        /// </summary>
+        /// <param name="condition">过滤条件</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="rowCount">总记录数</param>
+        /// <param name="pageCount">总页数</param>
+        /// <returns>数据列表</returns>
+        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

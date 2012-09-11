@@ -30,8 +30,12 @@ namespace ADSB.BLL
     /// </summary>    
     public class DepartmentBLL : IDepartmentBLL
     {
+        #region 变量区
         IDepartmentDAL dal = new DepartmentDAL();
-        
+        #endregion
+
+        #region 方法区
+        #region 自动生成
         /// <summary>
         /// 新增
         /// </summary>
@@ -93,5 +97,24 @@ namespace ADSB.BLL
         {
             return dal.GetList<Department>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
+        #endregion
+
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="deptID">部门编号</param>
+        /// <returns></returns>
+        public Department GetModel(int deptID)
+        {
+            IList<Department> lstData = dal.GetList<Department>(dept => dept.DeptID == deptID);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
+        }
+        #endregion
     }
 }

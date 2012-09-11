@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 using System.Collections;
+using System.Data;
 
 using ADSB.Model;
 using ADSB.DAL;
@@ -92,6 +93,20 @@ namespace ADSB.BLL
         public IList<User> GetList(Expression<Func<User, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
         {
             return dal.GetList<User>(condition, pageIndex, pageSize, out rowCount, out pageCount);
+        }
+
+        /// <summary>
+        /// 分页获取列表
+        /// </summary>
+        /// <param name="condition">过滤条件</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="rowCount">总记录数</param>
+        /// <param name="pageCount">总页数</param>
+        /// <returns>数据列表</returns>
+        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        {
+            return dal.GetList(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
     }
 }

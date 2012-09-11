@@ -4,10 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
+using ADSB.Common;
+
 namespace ADSB.UI.Code
 {
     public class BasePage : Page
     {
+        /// <summary>
+        /// 当前操作:add,update,delete,show
+        /// </summary>
+        public string Mode 
+        { 
+            get 
+            {
+                return WebCommon.GetRequest("mode", OperateMode.ADD);
+            } 
+        }
+
         protected override void OnPreInit(EventArgs e)
         {
             this.Theme = "default";

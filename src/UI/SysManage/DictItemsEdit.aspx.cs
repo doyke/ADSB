@@ -16,7 +16,6 @@ namespace ADSB.UI.SysManage
     {
         protected string dictCode;
         string itemID;        
-        string mode;
         IDictItemsBLL diBll = new DictItemsBLL();
 
         /// <summary>
@@ -37,8 +36,7 @@ namespace ADSB.UI.SysManage
         protected void Page_Load(object sender, EventArgs e)
         {
             dictCode = WebCommon.GetRequest("dictcode");
-            itemID = WebCommon.GetRequest("itemid");
-            mode = WebCommon.GetRequest("mode", OperateMode.ADD);
+            itemID = WebCommon.GetRequest("itemid");            
 
             if (string.IsNullOrEmpty(dictCode))
             {
@@ -53,7 +51,7 @@ namespace ADSB.UI.SysManage
 
         private void LoadData()
         {
-            switch (mode)
+            switch (Mode)
             {
                 case OperateMode.ADD: // 新增
                     {
@@ -91,7 +89,7 @@ namespace ADSB.UI.SysManage
             string remark = txtRemark.Value.Trim();
 
             // 修改
-            if (mode == OperateMode.UPDATE)
+            if (Mode == OperateMode.UPDATE)
             {
                 // 如果存在重名，返回
                 if (diBll.IsExists(item => item.ItemCode != UpdateItemCode && item.ItemCode == itemCode))

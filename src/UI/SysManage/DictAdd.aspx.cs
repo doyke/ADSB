@@ -16,16 +16,14 @@ namespace ADSB.UI.SysManage
 {
     public partial class DictAdd : BasePage
     {
-        string operateMode;
         int dictID;
         DictBLL dictBll = new DictBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            operateMode = WebCommon.GetRequest("mode", OperateMode.ADD);
             dictID = TypeParse.Object2Int32(WebCommon.GetRequest("dictid"), 0);
 
-            if (!IsPostBack && operateMode == "update" && dictID != 0)
+            if (!IsPostBack && Mode == OperateMode.UPDATE && dictID != 0)
             {
                 this.BindData();
             }
@@ -55,7 +53,7 @@ namespace ADSB.UI.SysManage
             string remark = txtRemark.Value.Trim();
 
 
-            if (operateMode == "update")
+            if (Mode == OperateMode.UPDATE)
             {
                 dictModel = dictBll.GetModel(dictID);
                 dictModel.DictName = name;

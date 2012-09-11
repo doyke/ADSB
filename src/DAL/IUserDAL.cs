@@ -16,6 +16,7 @@ using System.Text;
 using System.Linq.Expressions;
 
 using ADSB.Model;
+using System.Data;
 
 namespace ADSB.DAL
 {
@@ -27,5 +28,15 @@ namespace ADSB.DAL
     /// </summary>    
     public interface IUserDAL : IBaseDAL
     {
+        /// <summary>
+        /// 获取分页数据列表
+        /// </summary>
+        /// <param name="condition">查询条件</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="rowCount">总行数</param>
+        /// <param name="pageCount">总页数</param>
+        /// <returns>返回符合条件的记录</returns>
+        DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount, out int pageCount);
     }
 }    

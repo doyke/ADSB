@@ -27,11 +27,15 @@ namespace ADSB.BLL
     /// </summary>    
     public interface IDepartmentBLL
     {
+        #region 自动生成
         object Add(Department model);
         void Update(Department model);
         void Delete(Department model);
         bool IsExists(Expression<Func<Department, bool>> condition);
         IList<Department> GetList(Expression<Func<Department, bool>> condition);
         IList<Department> GetList(Expression<Func<Department, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount);
+        #endregion
+
+        Department GetModel(int DeptID);
     }
 }    
