@@ -29,7 +29,7 @@ namespace ADSB.BLL
     {
         #region 自动生成
         object Add(DepartmentUser model);
-        DepartmentUser GetModel(System.Int32 key);
+        DepartmentUser GetModel(String key);
         void Update(DepartmentUser model);
         void Delete(DepartmentUser model);
         bool IsExists(Expression<Func<DepartmentUser, bool>> condition);

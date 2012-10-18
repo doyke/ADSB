@@ -27,7 +27,7 @@ namespace ADSB.Model
     {
         #region 自动生成
         public virtual System.Int32 DeptUserID { get; set; }
-        public virtual System.Int32 DeptID { get; set; }
+        public virtual String DeptID { get; set; }
         public virtual System.String DeptName { get; set; }
         public virtual System.String UserID { get; set; }
         public virtual System.String UserName { get; set; }

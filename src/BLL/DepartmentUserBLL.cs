@@ -48,9 +48,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="key">关键字值</param>
         /// <returns>实体</returns>
-        public DepartmentUser GetModel(System.Int32 key)
+        public DepartmentUser GetModel(String key)
         {
-            IList<DepartmentUser> lstData = dal.GetList<DepartmentUser>(m => m.DeptUserID == key);
+            IList<DepartmentUser> lstData = dal.GetList<DepartmentUser>(m => m.UserID == key);
 
             if (lstData != null && lstData.Count > 0)
             {
@@ -66,6 +66,15 @@ namespace ADSB.BLL
         /// <param name="model">实体</param>
         public void Update(DepartmentUser model)
         {
+            if (model.DeptUserID == 0)
+            {
+                DepartmentUser tempModel = this.GetModel(model.UserID);
+
+                if (tempModel != null)
+                {
+                    model.DeptUserID = tempModel.DeptUserID;
+                }
+            }
             dal.Update<DepartmentUser>(model);
         }
 

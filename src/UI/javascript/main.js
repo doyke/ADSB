@@ -65,21 +65,20 @@ function checkInput(e)
 
     curEvent.returnValue = true;
 
-    $("label.require").each(function ()
-    {
+    $("label.require").each(function () {
         var theLabel = this;
-        var toValidate = $(this).next("p").find(":text").first();
+        var toValidate = $(this).next("p").find(":text,select").first();
 
-        if ($.trim(toValidate.val()).length == 0)
-        {
+        if ($.trim(toValidate.val()).length == 0) {
             var msg = $(this).text();
-            
-            if (msg.substr(0, 1) == "*")
-            {
+
+            if (msg.substr(0, 1) == "*") {
                 msg = msg.substr(1);
             }
 
-            dialogAlertMessage(msg + "不能为空，请重新输入！", function () { toValidate.focus(); });
+            var subfix = toValidate.get(0).tagName == "SELECT" ? "选择" : "输入";
+
+            dialogAlertMessage(msg + "不能为空，请重新" + subfix + "！", function () { toValidate.focus(); });
             curEvent.returnValue = false;
             return false;
         }

@@ -77,7 +77,7 @@
                     <p class="value"><input type="text" runat="server" id="txtSafeA"/></p>
                 </li> 
                 <li class="row">
-                    <label class="label">部门：</label>
+                    <label class="label require"><span>*</span>部门：</label>
                     <p class="value">
                         <asp:DropDownList runat="server" ID="ddlDept">
                             

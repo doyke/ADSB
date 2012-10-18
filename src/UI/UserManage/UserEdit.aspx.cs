@@ -18,6 +18,7 @@ namespace ADSB.UI.UserManage
         private IUsersBLL bll = new UsersBLL();
         private IDictItemsBLL itemBll = new DictItemsBLL();
         private IDepartmentBLL deptBll = new DepartmentBLL();
+        private IDepartmentUserBLL duBll = new DepartmentUserBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -78,6 +79,8 @@ namespace ADSB.UI.UserManage
                 ddlSafeQuestion.SelectedValue = model.Question;
                 txtSafeA.Value = model.Answer;
                 txtRemark.Value = model.Remark;
+
+                ddlDept.SelectedValue = duBll.GetModel(id).DeptID.ToString();
             }
         }
 
@@ -132,19 +135,51 @@ namespace ADSB.UI.UserManage
             user.Answer = txtSafeA.Value.Trim();
             user.LastUpdateDate = DateTime.Now;
 
+            // 新增
             if (Mode == OperateMode.ADD)
             {
                 user.UserID = Guid.NewGuid().ToString();
                 user.CreateDate = DateTime.Now;
-                bll.Add(user);
+                object userID = bll.Add(user);
+                this.SaveDepartmentUser((user as Users).UserID);
                 WebCommon.ResetControl(this.form1);
             }
-            else if (Mode == OperateMode.UPDATE)
+            else if (Mode == OperateMode.UPDATE) // 更新
             {
                 bll.Update(user);
+                this.SaveDepartmentUser(id);
             }
 
             WebCommon.DialogSuccessMsg(this, "保存成功！");
+        }
+
+        /// <summary>
+        /// 新增、更新用户部门
+        /// </summary>
+        /// <param name="userId"></param>
+        private void SaveDepartmentUser(string userId)
+        {   
+            string dept = ddlDept.SelectedValue;
+            DepartmentUser duModel = new DepartmentUser();
+
+            if (string.IsNullOrEmpty(dept)) 
+            {
+                return;
+            }
+
+            duModel.UserID = userId;
+            duModel.UserName = txtUserName.Value.Trim();
+            duModel.DeptID = dept;
+            duModel.DeptName = ddlDept.SelectedItem.Text;
+
+            if (Mode == OperateMode.ADD)
+            {
+                duBll.Add(duModel);
+            }
+            else
+            {
+                duBll.Update(duModel);
+            }
         }
     }
 }

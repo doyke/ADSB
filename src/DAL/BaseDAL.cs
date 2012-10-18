@@ -98,14 +98,14 @@ namespace ADSB.DAL
             {
                 using (ITransaction tran = session.BeginTransaction())
                 {
-                    rowCount = session.QueryOver<T>().Where(where).RowCount();                    
-
                     if (where == null)
                     {
+                        rowCount = session.QueryOver<T>().RowCount();
                         result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
                     }
                     else
                     {
+                        rowCount = session.QueryOver<T>().Where(where).RowCount();
                         result = session.QueryOver<T>().Where(where).Skip((pageIndex - 1) * pageSize).List<T>();
                     }
 
@@ -136,16 +136,17 @@ namespace ADSB.DAL
             using (ISession session = OpenSession())
             {
                 using (ITransaction tran = session.BeginTransaction())
-                {
-                    rowCount = session.QueryOver<T>().Where(where).RowCount();
+                {   
                     pageCount = this.GetPageCount(rowCount, pageCount);
 
                     if (where == null)
                     {
+                        rowCount = session.QueryOver<T>().RowCount();
                         result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
                     }
                     else
                     {
+                        rowCount = session.QueryOver<T>().Where(where).RowCount();
                         result = session.QueryOver<T>().Where(where).Skip((pageIndex - 1) * pageSize).List<T>();
                     }
 
