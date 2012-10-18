@@ -9,7 +9,24 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    <fieldset>
+            <legend class="set_legend">岗位</legend>            
+            <ul>
+                <li class="row">
+                    <label class="label">岗位名称：</label>
+                    <p class="value"><input type="text" runat="server" id="txtPositionName"/></p>
+                </li>
+                <li class="row">
+                    <label class="label">备注：</label>
+                    <p class="value">
+                        <asp:TextBox runat="server" TextMode="MultiLine" ID="txtRemark"></asp:TextBox></p>
+                </li>                
+                <li class="row">
+                    <label class="label"></label>
+                    <p class="value"><input type="submit" runat="server" class="bt_submit jui_button" value="保存" id="Submit1" onserverclick="btnSubmit_Click"/><a href="PositionList.aspx" class="jui_button">返回</a></p>
+                </li>      
+            </ul>
+        </fieldset>
     </div>
     </form>
 </body>

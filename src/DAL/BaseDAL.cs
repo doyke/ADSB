@@ -1,12 +1,12 @@
 ﻿/*
 版权所有：版权所有(C) 2012
 文件名称：IBaseDAL.cs
-系统编号：BF_SYS002
+系统编号：ADSB_SYS001
 系统名称：ADSB框架
-组件编号：BF_CN001
+组件编号：ADSB_CN002
 组件名称：基本表
 设计作者：自动生成
-完成日期：2012-08-11
+完成日期：2012-10-17
 内容摘要：基础数据访问实现
 */
 
@@ -24,7 +24,7 @@ namespace ADSB.DAL
 {
     /// <summary>
     /// 类 名 称：BaseDAL
-    /// 完成日期：2012-08-11
+    /// 完成日期：2012-10-17
     /// 编码作者：自动生成
     /// 内容摘要：BaseDAL接口
     /// </summary> 
@@ -48,7 +48,7 @@ namespace ADSB.DAL
             return fac.OpenSession();
         }
 
-        #region IBasicDAL实现
+        #region 自动生成
         /// <summary>
         /// 获取列表
         /// </summary>
@@ -78,18 +78,55 @@ namespace ADSB.DAL
 
             return result;
         }
+        
+        /// <summary>
+        /// 获取分布列表
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="where"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="rowCount"></param>        
+        /// <returns></returns>
+        public IList<T> GetList<T>(Expression<Func<T, bool>> where, int pageIndex, int pageSize, out int rowCount) where T : class
+        {
+            rowCount = 0;            
+
+            IList<T> result = null;
+
+            using (ISession session = OpenSession())
+            {
+                using (ITransaction tran = session.BeginTransaction())
+                {
+                    rowCount = session.QueryOver<T>().Where(where).RowCount();                    
+
+                    if (where == null)
+                    {
+                        result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
+                    }
+                    else
+                    {
+                        result = session.QueryOver<T>().Where(where).Skip((pageIndex - 1) * pageSize).List<T>();
+                    }
+
+                    tran.Commit();
+                }
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// 获取分布列表
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="condition"></param>
+        /// <param name="where"></param>
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <param name="rowCount"></param>
         /// <param name="pageCount"></param>
         /// <returns></returns>
-        public IList<T> GetList<T>(Expression<Func<T, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
+        public IList<T> GetList<T>(Expression<Func<T, bool>> where, int pageIndex, int pageSize, out int rowCount, out int pageCount) where T : class
         {
             rowCount = 0;
             pageCount = 1;
@@ -100,25 +137,25 @@ namespace ADSB.DAL
             {
                 using (ITransaction tran = session.BeginTransaction())
                 {
-                    if (condition == null)
+                    rowCount = session.QueryOver<T>().Where(where).RowCount();
+                    pageCount = this.GetPageCount(rowCount, pageCount);
+
+                    if (where == null)
                     {
-                        rowCount = session.QueryOver<T>().RowCount();
                         result = session.QueryOver<T>().Skip((pageIndex - 1) * pageSize).List<T>();
                     }
                     else
                     {
-                        rowCount = session.QueryOver<T>().Where(condition).RowCount();
-                        result = session.QueryOver<T>().Where(condition).Skip((pageIndex - 1) * pageSize).List<T>();
+                        result = session.QueryOver<T>().Where(where).Skip((pageIndex - 1) * pageSize).List<T>();
                     }
 
-                    pageCount = this.GetPageCount(rowCount, pageCount);
                     tran.Commit();
                 }
             }
 
             return result;
         }
-
+        
         /// <summary>
         /// 获取总页数
         /// </summary>
@@ -188,7 +225,7 @@ namespace ADSB.DAL
                 }
             }
         }
-
+        
         /// <summary>
         /// 是否已经存在
         /// </summary>

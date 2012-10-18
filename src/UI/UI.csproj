@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>..\..\..\..\App\OpenSource\AspNetPager741Samples\Bin\AspNetPager.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\ShareLib\nhibernate-nhibernate-core-13342b3\build\NHibernate-3.4.0.Alpha1\bin\net-3.5\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -104,6 +107,28 @@
     <Content Include="javascript\jquery-ui-1.8.22.custom.min.js" />
     <Content Include="javascript\Jquery.Common.js" />
     <Content Include="javascript\main.js" />
+    <Content Include="javascript\My97DatePicker\calendar.js" />
+    <Content Include="javascript\My97DatePicker\config.js" />
+    <Content Include="javascript\My97DatePicker\lang\en-US.js" />
+    <Content Include="javascript\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="javascript\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="javascript\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="javascript\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\bg.jpg" />
+    <Content Include="javascript\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="javascript\My97DatePicker\skin\default\dateselect.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\glass-bg.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\hd-sprite.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\img.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\left-btn.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\left-btn2.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\right-btn.gif" />
+    <Content Include="javascript\My97DatePicker\skin\default\right-btn2.gif" />
+    <Content Include="javascript\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="javascript\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="javascript\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="javascript\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="javascript\My97DatePicker\WdatePicker.js" />
     <Content Include="javascript\ValidateUtils.js" />
     <Content Include="SysManage\DictAdd.aspx" />
     <Content Include="javascript\jquery-1.4.1-vsdoc.js" />

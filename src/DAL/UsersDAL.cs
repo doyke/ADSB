@@ -28,7 +28,7 @@ namespace ADSB.DAL
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
-    public class UserDAL : BaseDAL, IUserDAL
+    public class UsersDAL : BaseDAL, IUsersDAL
     {
         /// <summary>
         /// 分页获取列表
@@ -36,12 +36,23 @@ namespace ADSB.DAL
         /// <param name="condition">过滤条件</param>
         /// <param name="pageIndex">当前页</param>
         /// <param name="pageSize">页大小</param>
-        /// <param name="rowCount">总记录数</param>
-        /// <param name="pageCount">总页数</param>
+        /// <param name="rowCount">总记录数</param>        
         /// <returns>数据列表</returns>
-        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount)
         {
-            throw new NotImplementedException();
+            PagerDAL p = new PagerDAL();
+            p.Table = "users a left join dictitems b on a.sex=b.itemcode and b.dictcode='Sex'";
+            p.Table += " left join dictitems c on a.status=c.itemcode and c.dictcode='UserStatus'"; 
+            p.StrWhere = "1=1";
+            p.Fields = "UserName,UserID,RealName,Email,Mobile,Tel,b.ItemName Sex,c.ItemName Status,a.Remark";
+            p.PageIndex = pageIndex;
+            p.PageSize = pageSize;
+            p.OrderField = "UserName";            
+
+            DataSet dsDate = p.GetData();
+            rowCount = p.RowCount;
+
+            return dsDate.Tables[0];
         }
     }
 }

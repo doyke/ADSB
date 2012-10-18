@@ -12,10 +12,18 @@ using ADSB.Common;
 
 namespace ADSB.UI.UserManage
 {
+    /// <summary>
+    /// 部门列表
+    /// </summary>
     public partial class DepartmentList : BasePage
     {
         private IDepartmentBLL deptBll = new DepartmentBLL();
 
+        /// <summary>
+        /// 加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,9 +40,10 @@ namespace ADSB.UI.UserManage
             int rowCount;
             int pageCount;
 
-            IList<Department> lstData = deptBll.GetList(null, 1, 1000000, out rowCount, out pageCount);
+            IList<Department> lstData = deptBll.GetList(null, anpPager.CurrentPageIndex, anpPager.PageSize, out rowCount, out pageCount);
             gvList.DataSource = lstData;
             gvList.DataBind();
+            anpPager.RecordCount = rowCount;
         }
 
         /// <summary>
@@ -53,6 +62,16 @@ namespace ADSB.UI.UserManage
                 WebCommon.DialogSuccessMsg(this, "删除成功！");
             }
 
+            this.BindData();
+        }
+
+        /// <summary>
+        /// 分页
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void anpPager_PageChanged(object sender, EventArgs e)
+        {
             this.BindData();
         }
     }

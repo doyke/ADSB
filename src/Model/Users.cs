@@ -23,25 +23,25 @@ namespace ADSB.Model
     /// 内容摘要：包含实体的信息,映射数据库[User]表
     /// </summary>
     [Serializable]
-    public class User
+    public class Users
     {
         public virtual System.String UserID { get; set; }
         public virtual System.String UserName { get; set; }
         public virtual System.String RealName { get; set; }
         public virtual System.String Password { get; set; }
         public virtual System.Int32 Age { get; set; }
-        public virtual System.Int32 Sex { get; set; }
+        public virtual System.Int32? Sex { get; set; }
         public virtual System.String Education { get; set; }
         public virtual System.String Tel { get; set; }
         public virtual System.String Email { get; set; }
         public virtual System.String Mobile { get; set; }
         public virtual System.String QQ { get; set; }
-        public virtual System.DateTime Birthday { get; set; }
-        public virtual System.Int32 Status { get; set; }
+        public virtual System.DateTime? Birthday { get; set; }
+        public virtual System.Int32? Status { get; set; }
         public virtual System.String Address { get; set; }
         public virtual System.String Company { get; set; }
         public virtual System.String LastLoginIP { get; set; }
-        public virtual System.DateTime LastLoginDate { get; set; }
+        public virtual System.DateTime? LastLoginDate { get; set; }
         public virtual System.String Question { get; set; }
         public virtual System.String Answer { get; set; }
         public virtual System.String Remark { get; set; }

@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Data;
 
 namespace ADSB.Common
 {
@@ -201,6 +202,64 @@ namespace ADSB.Common
             callbackScript = "function(){" + callbackScript + "}";
             script = string.Format("dialogMessage('{0}',{1},{2});", script, callbackScript, msgType);
             ExecuteJavaScript(page, script);
+        }
+        #endregion
+
+        #region 绑定数据
+        /// <summary>
+        /// 绑定DropDownList
+        /// </summary>
+        /// <param name="ddl"></param>
+        /// <param name="dt"></param>
+        /// <param name="addPleaseSelect"></param>
+        /// <param name="selectedValue"></param>
+        public static void BindDropDownList(DropDownList ddl, object dataSource, string text, string value, bool addPleaseSelect, string selectedValue)
+        {
+            if (ddl == null)
+            {
+                throw new ArgumentNullException("ddl");
+            }
+
+            if (dataSource == null)
+            {
+                throw new ArgumentNullException("dt");
+            }
+
+            ddl.DataSource = dataSource;
+            ddl.DataTextField = text;
+            ddl.DataValueField = value;
+            ddl.DataBind();
+
+            if (addPleaseSelect)
+            {
+                ddl.Items.Insert(0, new ListItem("请选择", string.Empty));
+            }
+
+            if (!string.IsNullOrEmpty(selectedValue))
+            {
+                ddl.SelectedValue = selectedValue;
+            }
+        }
+
+        /// <summary>
+        /// 绑定DropDownList，默认添加“请选择”
+        /// </summary>
+        /// <param name="ddl"></param>
+        /// <param name="dt"></param>
+        public static void BindDropDownList(DropDownList ddl, object dataSource, string text, string value)
+        {
+            BindDropDownList(ddl, dataSource, text, value, null);
+        }
+
+        /// <summary>
+        /// 绑定DropDownList，默认添加“请选择”，可设置选中项值
+        /// </summary>
+        /// <param name="ddl"></param>
+        /// <param name="dt"></param>
+        /// <param name="selectedValue"></param>
+        public static void BindDropDownList(DropDownList ddl, object dataSource, string text, string value, string selectedValue)
+        {
+            BindDropDownList(ddl, dataSource, text, value, true, selectedValue);
         }
         #endregion
     }

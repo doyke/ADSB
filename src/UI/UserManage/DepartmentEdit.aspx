@@ -14,11 +14,11 @@
         <ul>
             <li class="row">
                 <label class="label require"><span>*</span>部门名称：</label>
-                <p class="value"><input type="text" runat="server" id="txtCode" disabled="true"/></p>
+                <p class="value"><input type="text" runat="server" id="txtName"/></p>
             </li>
             <li class="row">
                 <label class="label">简称：</label>
-                <p class="value"><input type="text" runat="server" id="txtItemCode"/></p>
+                <p class="value"><input type="text" runat="server" id="txtShortName"/></p>
             </li>            
             <li class="row">
                 <label class="label">地址：</label>

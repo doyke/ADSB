@@ -33,7 +33,7 @@ namespace ADSB.UI.UserManage
 
             if (!IsPostBack)
             {
-                this.InitUI();
+                this.InitUI();                
             }
         }
 
@@ -52,7 +52,58 @@ namespace ADSB.UI.UserManage
                     WebCommon.DialogAlertMsg(this, "不存在该部门！", "window.history.go(-1);");
                     return;
                 }
+
+                txtName.Disabled = true;
+                txtName.Value = deptModel.DeptName;
+                txtShortName.Value = deptModel.ShotDeptName;
+                txtAddress.Value = deptModel.Address;
+                txtPhone.Value = deptModel.Tel;
+                txtFax.Value = deptModel.Fax;
+                txtRemark.Value = deptModel.Remark;
             }
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void btnSubmit_Click(object sender, EventArgs e) 
+        {
+            string name = txtName.Value.Trim();
+            string shortName = txtShortName.Value.Trim();
+            string address = txtAddress.Value.Trim();
+            string phone = txtPhone.Value.Trim();
+            string fax = txtFax.Value.Trim();
+            string remark = txtRemark.Value.Trim();
+            Department model = new Department();
+
+            // 更新获取数据
+            if (Mode == OperateMode.UPDATE)
+            {
+                model = deptBll.GetModel(DeptID);
+            }
+
+            model.DeptName = name;
+            model.ShotDeptName = shortName;
+            model.Address = address;
+            model.Tel = phone;
+            model.Fax = fax;
+            model.Remark = remark;
+            model.LastUpdateDate = DateTime.Now;
+
+            if (Mode == OperateMode.ADD)
+            {
+                model.CreateDate = DateTime.Now;
+                deptBll.Add(model);
+                WebCommon.ResetControl(this.form1);
+            }
+            else
+            {
+                deptBll.Update(model);                
+            }
+
+            WebCommon.DialogSuccessMsg(this, "保存成功！");
         }
     }
 }

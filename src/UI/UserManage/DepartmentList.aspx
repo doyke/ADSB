@@ -19,11 +19,11 @@
         <asp:GridView ID="gvList" runat="server" AutoGenerateColumns="false" CssClass="data_list"
             OnRowCommand="gvList_RowCommand">
             <Columns>
-                <asp:BoundField DataField="Code" HeaderText="编号" />
-                <asp:BoundField DataField="DictName" HeaderText="名称" />
-                <asp:BoundField DataField="Remark" HeaderText="备注" />
-                <asp:BoundField DataField="LastUpdateByName" HeaderText="最后修改人" />
-                <asp:BoundField DataField="LastUpdateDate" HeaderText="最后更新时间" DataFormatString="{0:yyyy-MM-dd}" />
+                <asp:BoundField DataField="DeptName" HeaderText="部门名称" />
+                <asp:BoundField DataField="ShotDeptName" HeaderText="简称" />
+                <asp:BoundField DataField="Tel" HeaderText="电话" />
+                <asp:BoundField DataField="Fax" HeaderText="传真" />
+                <asp:BoundField DataField="Remark" HeaderText="备注" />                
                 <asp:TemplateField HeaderText="操作">
                     <ItemTemplate>
                         <a href='UserList.aspx?deptid=<%# Eval("DeptID") %>'>查看用户</a>
@@ -34,6 +34,8 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <anp:AspNetPager id="anpPager" runat="server" 
+            onpagechanged="anpPager_PageChanged"></anp:AspNetPager>
     </div>
     </form>
 </body>

@@ -12,7 +12,7 @@ namespace ADSB.UI.UserManage
 {
     public partial class UserList : BasePage
     {
-        IUserBLL userBll = new UserBLL();
+        IUsersBLL userBll = new UsersBLL();
 
         /// <summary>
         /// 加载
@@ -23,23 +23,24 @@ namespace ADSB.UI.UserManage
         {
             if (!IsPostBack)
             {
-                this.LoadData();
+                this.BindData();
             }
         }
 
         /// <summary>
         /// 绑定数据
         /// </summary>
-        private void LoadData()
+        private void BindData()
         {
             string condition = null;
-            int curIndex = 1;
-            int pageSize = 10;
-            int rowCount = 0;
-            int pageCount = 0;
+            int curIndex = anpPager.CurrentPageIndex;
+            int pageSize = anpPager.PageSize;
+            int rowCount = 0;            
 
-            gvList.DataSource = userBll.GetList(condition, curIndex, pageSize, out rowCount, out pageCount);
+            gvList.DataSource = userBll.GetList(condition, curIndex, pageSize, out rowCount);
             gvList.DataBind();
+
+            anpPager.RecordCount = rowCount;
         }
 
         /// <summary>
@@ -49,7 +50,12 @@ namespace ADSB.UI.UserManage
         /// <param name="e"></param>
         protected void gvList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            
+        }
 
+        protected void anpPager_PageChanged(object sender, EventArgs e)
+        {
+            BindData();
         }
     }
 }

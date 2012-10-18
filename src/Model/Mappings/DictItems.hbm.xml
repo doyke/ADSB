@@ -8,6 +8,7 @@
     <property name="ItemCode"/>
     <property name="ItemName"/>
     <property name="ItemValue"/>
+    <property name="OrderNum"/>
     <property name="Remark"/>
     <property name="IsEnable"/>
     <property name="CreateBy"/>

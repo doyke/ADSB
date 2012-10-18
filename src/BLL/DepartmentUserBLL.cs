@@ -6,7 +6,7 @@
 组件编号：ADSB_CN002
 组件名称：基本表
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-10-17
 内容摘要：DepartmentUserBLL业务类
 */
 
@@ -24,7 +24,7 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 类 名 称：DepartmentUserBLL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-10-17
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
@@ -32,6 +32,7 @@ namespace ADSB.BLL
     {
         IDepartmentUserDAL dal = new DepartmentUserDAL();
         
+        #region 自动生成
         /// <summary>
         /// 新增
         /// </summary>
@@ -40,6 +41,23 @@ namespace ADSB.BLL
         public object Add(DepartmentUser model)
         {
             return dal.Add<DepartmentUser>(model);
+        }
+        
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="key">关键字值</param>
+        /// <returns>实体</returns>
+        public DepartmentUser GetModel(System.Int32 key)
+        {
+            IList<DepartmentUser> lstData = dal.GetList<DepartmentUser>(m => m.DeptUserID == key);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -79,6 +97,19 @@ namespace ADSB.BLL
         {
             return dal.GetList<DepartmentUser>(condition);
         }
+        
+        /// <summary>
+        /// 分页获取列表
+        /// </summary>
+        /// <param name="condition">过滤条件</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="rowCount">总记录数</param>        
+        /// <returns>数据列表</returns>
+        public IList<DepartmentUser> GetList(Expression<Func<DepartmentUser, bool>> condition, int pageIndex, int pageSize, out int rowCount)
+        {
+            return dal.GetList<DepartmentUser>(condition, pageIndex, pageSize, out rowCount);
+        }
 
         /// <summary>
         /// 分页获取列表
@@ -93,5 +124,6 @@ namespace ADSB.BLL
         {
             return dal.GetList<DepartmentUser>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
+        #endregion
     }
 }

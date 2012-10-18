@@ -29,36 +29,54 @@ namespace ADSB.BLL
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
-    public class UserBLL : IUserBLL
+    public class UsersBLL : IUsersBLL
     {
-        IUserDAL dal = new UserDAL();
-        
+        IUsersDAL dal = new UsersDAL();
+
+        #region 自动生成
         /// <summary>
         /// 新增
         /// </summary>
         /// <param name="model">实体</param>
         /// <returns>主键值</returns>
-        public object Add(User model)
+        public object Add(Users model)
         {
-            return dal.Add<User>(model);
+            return dal.Add<Users>(model);
+        }
+
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="key">关键字值</param>
+        /// <returns>实体</returns>
+        public Users GetModel(System.String key)
+        {
+            IList<Users> lstData = dal.GetList<Users>(m => m.UserID == key);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
         }
 
         /// <summary>
         /// 更新
         /// </summary>
         /// <param name="model">实体</param>
-        public void Update(User model)
+        public void Update(Users model)
         {
-            dal.Update<User>(model);
+            dal.Update<Users>(model);
         }
 
         /// <summary>
         /// 删除
         /// </summary>
         /// <param name="model">实体</param>
-        public void Delete(User model)
+        public void Delete(Users model)
         {
-            dal.Delete<User>(model);
+            dal.Delete<Users>(model);
         }
 
         /// <summary>
@@ -66,9 +84,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="condition">判断条件</param>
         /// <returns></returns>
-        public bool IsExists(Expression<Func<User, bool>> condition)
+        public bool IsExists(Expression<Func<Users, bool>> condition)
         {
-            return dal.IsExists<User>(condition);
+            return dal.IsExists<Users>(condition);
         }
 
         /// <summary>
@@ -76,9 +94,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="condition">过滤条件</param>
         /// <returns>数据列表</returns>
-        public IList<User> GetList(Expression<Func<User, bool>> condition)
+        public IList<Users> GetList(Expression<Func<Users, bool>> condition)
         {
-            return dal.GetList<User>(condition);
+            return dal.GetList<Users>(condition);
         }
 
         /// <summary>
@@ -90,23 +108,15 @@ namespace ADSB.BLL
         /// <param name="rowCount">总记录数</param>
         /// <param name="pageCount">总页数</param>
         /// <returns>数据列表</returns>
-        public IList<User> GetList(Expression<Func<User, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        public IList<Users> GetList(Expression<Func<Users, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
         {
-            return dal.GetList<User>(condition, pageIndex, pageSize, out rowCount, out pageCount);
+            return dal.GetList<Users>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
+        #endregion
 
-        /// <summary>
-        /// 分页获取列表
-        /// </summary>
-        /// <param name="condition">过滤条件</param>
-        /// <param name="pageIndex">当前页</param>
-        /// <param name="pageSize">页大小</param>
-        /// <param name="rowCount">总记录数</param>
-        /// <param name="pageCount">总页数</param>
-        /// <returns>数据列表</returns>
-        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        public DataTable GetList(string condition, int pageIndex, int pageSize, out int rowCount)
         {
-            return dal.GetList(condition, pageIndex, pageSize, out rowCount, out pageCount);
+            return dal.GetList(condition, pageIndex, pageSize, out rowCount);
         }
     }
 }

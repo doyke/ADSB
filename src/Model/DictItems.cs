@@ -30,6 +30,7 @@ namespace ADSB.Model
         public virtual System.String ItemCode { get; set; }
         public virtual System.String ItemName { get; set; }
         public virtual System.String ItemValue { get; set; }
+        public virtual int OrderNum { get; set; }
         public virtual System.String Remark { get; set; }
         public virtual System.Boolean? IsEnable { get; set; }
         public virtual System.String CreateBy { get; set; }

@@ -29,10 +29,10 @@ namespace ADSB.Model
         public virtual System.Int32 DeptID { get; set; }
         public virtual System.String DeptName { get; set; }
         public virtual System.String ShotDeptName { get; set; }
-        public virtual System.Int32? ParentDept { get; set; }
+        public virtual System.Int32 ParentDept { get; set; }
         public virtual System.String Address { get; set; }
         public virtual System.String Tel { get; set; }
-        public virtual System.String Mobile { get; set; }
+        public virtual System.String Fax { get; set; }
         public virtual System.String Remark { get; set; }
         public virtual System.Boolean? IsEnable { get; set; }
         public virtual System.String CreateBy { get; set; }

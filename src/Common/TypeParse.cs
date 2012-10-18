@@ -152,7 +152,7 @@ namespace ADSB.Common
             try
             {
                 // 如果没有设置日期格式，返回默认格式
-                if (!String.IsNullOrEmpty(dateFormat))
+                if (String.IsNullOrEmpty(dateFormat))
                 {
                     return Convert.ToDateTime(date).ToString();
                 }

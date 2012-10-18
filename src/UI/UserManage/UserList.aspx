@@ -11,7 +11,7 @@
     <div>
         <div class="data_header">
             <div class="title">
-                字典列表</div>
+                用户列表</div>
             <div class="operate">
                 <a href="UserEdit.aspx" class="jui_button">新增</a>
             </div>
@@ -25,19 +25,21 @@
                 <asp:BoundField DataField="Tel" HeaderText="电话" />
                 <asp:BoundField DataField="Mobile" HeaderText="手机" />
                 <asp:BoundField DataField="Sex" HeaderText="性别" />
-                <asp:BoundField DataField="Dept" HeaderText="部门" />
-                <asp:BoundField DataField="Position" HeaderText="岗位" />
+                <%-- <asp:BoundField DataField="Dept" HeaderText="部门" />--%>
+                <%-- <asp:BoundField DataField="Position" HeaderText="岗位" />--%>
                 <asp:BoundField DataField="Status" HeaderText="状态" />
                 <asp:BoundField DataField="Remark" HeaderText="备注" />                
                 <asp:TemplateField HeaderText="操作">
                     <ItemTemplate>                        
-                        <a href='UserEdit.aspx?mode=update&userid=<%# Eval("UserID") %>'>修改</a>
-                        <asp:LinkButton ID="btnDataDelete" runat="server" CssClass="delete" CommandName="del"
-                            CommandArgument='<%# Eval("UserID") %>'>删除</asp:LinkButton>
+                        <a href='UserEdit.aspx?mode=update&id=<%# Eval("UserID") %>'>修改</a>                        
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <anp:AspNetPager ID="anpPager" CssClass="paginator" 
+            CurrentPageButtonClass="cpb" runat="server" PageSize="10"
+            onpagechanged="anpPager_PageChanged" AlwaysShow="True" FirstPageText="首页" 
+            LastPageText="最后一页" NextPageText="下一页" PrevPageText="上一页"></anp:AspNetPager>
     </div>
     </form>
 </body>

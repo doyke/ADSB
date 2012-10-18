@@ -25,7 +25,7 @@ namespace ADSB.UI.SysManage
         { 
             get 
             {
-                return ViewState["DictItemCode"] == null ? string.Empty : ViewState["DictItem"].ToString();
+                return ViewState["DictItemCode"] == null ? string.Empty : ViewState["DictItemCode"].ToString();
             }
             set 
             {

@@ -6,7 +6,7 @@
 组件编号：ADSB_CN002
 组件名称：基本表
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-10-16
 内容摘要：PositionBLL业务类
 */
 
@@ -24,14 +24,15 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 类 名 称：PositionBLL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-10-16
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
     public class PositionBLL : IPositionBLL
     {
         IPositionDAL dal = new PositionDAL();
-        
+
+        #region 自动生成
         /// <summary>
         /// 新增
         /// </summary>
@@ -40,6 +41,23 @@ namespace ADSB.BLL
         public object Add(Position model)
         {
             return dal.Add<Position>(model);
+        }
+
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="key">关键字值</param>
+        /// <returns>实体</returns>
+        public Position GetModel(System.Int32 key)
+        {
+            IList<Position> lstData = dal.GetList<Position>(m => m.PositionID == key);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -93,5 +111,6 @@ namespace ADSB.BLL
         {
             return dal.GetList<Position>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
+        #endregion
     }
 }

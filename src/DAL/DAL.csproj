@@ -8,7 +8,7 @@
     <ProjectGuid>{DB2A3371-9D0D-4573-A0F9-10A68CD941AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ADSL.DAL</RootNamespace>
+    <RootNamespace>ADSB.DAL</RootNamespace>
     <AssemblyName>BruceFramework.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -67,11 +67,12 @@
     <Compile Include="IFunctionCategoryDAL.cs" />
     <Compile Include="IFunctionsDAL.cs" />
     <Compile Include="IPositionDAL.cs" />
-    <Compile Include="IUserDAL.cs" />
+    <Compile Include="IUsersDAL.cs" />
     <Compile Include="IUserDepartmentPositionDAL.cs" />
+    <Compile Include="PagerDAL.cs" />
     <Compile Include="PositionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDAL.cs" />
+    <Compile Include="UsersDAL.cs" />
     <Compile Include="UserDepartmentPositionDAL.cs" />
   </ItemGroup>
   <ItemGroup>
