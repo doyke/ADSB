@@ -1,12 +1,12 @@
 ﻿/*
 版权所有：版权所有(C) 2012
 文件名称：FunctionCategoryBLL.cs
-系统编号：ADSB_SYS001
+系统编号：BF_SYS002
 系统名称：ADSB框架
-组件编号：ADSB_CN002
-组件名称：基本表
+组件编号：BF_CN002
+组件名称：权限设计
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-10-31
 内容摘要：FunctionCategoryBLL业务类
 */
 
@@ -24,7 +24,7 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 类 名 称：FunctionCategoryBLL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-10-31
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
@@ -32,6 +32,7 @@ namespace ADSB.BLL
     {
         IFunctionCategoryDAL dal = new FunctionCategoryDAL();
         
+        #region 自动生成
         /// <summary>
         /// 新增
         /// </summary>
@@ -40,6 +41,23 @@ namespace ADSB.BLL
         public object Add(FunctionCategory model)
         {
             return dal.Add<FunctionCategory>(model);
+        }
+        
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="key">关键字值</param>
+        /// <returns>实体</returns>
+        public FunctionCategory GetModel(System.Int32 key)
+        {
+            IList<FunctionCategory> lstData = dal.GetList<FunctionCategory>(m => m.FuncCategoryID == key);
+
+            if (lstData != null && lstData.Count > 0)
+            {
+                return lstData[0];
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -79,6 +97,19 @@ namespace ADSB.BLL
         {
             return dal.GetList<FunctionCategory>(condition);
         }
+        
+        /// <summary>
+        /// 分页获取列表
+        /// </summary>
+        /// <param name="condition">过滤条件</param>
+        /// <param name="pageIndex">当前页</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="rowCount">总记录数</param>        
+        /// <returns>数据列表</returns>
+        public IList<FunctionCategory> GetList(Expression<Func<FunctionCategory, bool>> condition, int pageIndex, int pageSize, out int rowCount)
+        {
+            return dal.GetList<FunctionCategory>(condition, pageIndex, pageSize, out rowCount);
+        }
 
         /// <summary>
         /// 分页获取列表
@@ -93,5 +124,6 @@ namespace ADSB.BLL
         {
             return dal.GetList<FunctionCategory>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
+        #endregion
     }
 }

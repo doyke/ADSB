@@ -1,12 +1,12 @@
 ﻿/*
 版权所有：版权所有(C) 2012
 文件名称：DepartmentUserBLL.cs
-系统编号：ADSB_SYS001
+系统编号：BF_SYS002
 系统名称：ADSB框架
-组件编号：ADSB_CN002
-组件名称：基本表
+组件编号：BF_CN002
+组件名称：权限设计
 设计作者：自动生成
-完成日期：2012-10-17
+完成日期：2012-10-31
 内容摘要：DepartmentUserBLL业务类
 */
 
@@ -24,7 +24,7 @@ namespace ADSB.BLL
 {
     /// <summary>
     /// 类 名 称：DepartmentUserBLL
-    /// 完成日期：2012-10-17
+    /// 完成日期：2012-10-31
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
@@ -48,9 +48,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="key">关键字值</param>
         /// <returns>实体</returns>
-        public DepartmentUser GetModel(String key)
+        public DepartmentUser GetModel(System.Int32 key)
         {
-            IList<DepartmentUser> lstData = dal.GetList<DepartmentUser>(m => m.UserID == key);
+            IList<DepartmentUser> lstData = dal.GetList<DepartmentUser>(m => m.DeptUserID == key);
 
             if (lstData != null && lstData.Count > 0)
             {
@@ -66,15 +66,6 @@ namespace ADSB.BLL
         /// <param name="model">实体</param>
         public void Update(DepartmentUser model)
         {
-            if (model.DeptUserID == 0)
-            {
-                DepartmentUser tempModel = this.GetModel(model.UserID);
-
-                if (tempModel != null)
-                {
-                    model.DeptUserID = tempModel.DeptUserID;
-                }
-            }
             dal.Update<DepartmentUser>(model);
         }
 

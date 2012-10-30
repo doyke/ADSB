@@ -1,15 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ADSB.Model" assembly="ADSB.Model">
-    <class name="Authorize">
-       <id name="SeqNo">
+    <class name="Authorization">
+       <id name="FunctionID">
          <generator class="identity"/>
        </id>
-       <property name="FunctionID"/>
+       <property name="FunctionName"/>
+       <property name="Url"/>
+       <property name="Category"/>
+       <property name="AuthorityType"/>
+       <property name="Command"/>
        <property name="User"/>
        <property name="Department"/>
        <property name="Position"/>
        <property name="DeptPosition"/>
-       <property name="AuthorityType"/>
        <property name="LastUpdateBy"/>
        <property name="LastUpdateByName"/>
        <property name="LastUpdateDate"/>

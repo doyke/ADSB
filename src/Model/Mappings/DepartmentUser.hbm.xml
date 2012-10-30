@@ -5,8 +5,9 @@
          <generator class="identity"/>
        </id>
        <property name="DeptID"/>
-       <property name="DeptName"/>
-       <property name="UserID"/>
-       <property name="UserName"/>
+       <property name="UserIDs"/>
+       <property name="CreateBy"/>
+       <property name="CreateDate"/>
+       <property name="CreatorName"/>
     </class>
 </hibernate-mapping>

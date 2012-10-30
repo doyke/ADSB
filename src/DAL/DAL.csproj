@@ -48,19 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizationDAL.cs" />
     <Compile Include="AuthorizeDAL.cs" />
     <Compile Include="BaseDAL.cs" />
     <Compile Include="DepartmentDAL.cs" />
     <Compile Include="DepartmentPositionDAL.cs" />
+    <Compile Include="DepartmentPositionUserDAL.cs" />
     <Compile Include="DepartmentUserDAL.cs" />
     <Compile Include="DictDAL.cs" />
     <Compile Include="DictItemsDAL.cs" />
     <Compile Include="FunctionCategoryDAL.cs" />
     <Compile Include="FunctionsDAL.cs" />
+    <Compile Include="IAuthorizationDAL.cs" />
     <Compile Include="IAuthorizeDAL.cs" />
     <Compile Include="IBaseDAL.cs" />
     <Compile Include="IDepartmentDAL.cs" />
     <Compile Include="IDepartmentPositionDAL.cs" />
+    <Compile Include="IDepartmentPositionUserDAL.cs" />
     <Compile Include="IDepartmentUserDAL.cs" />
     <Compile Include="IDictDAL.cs" />
     <Compile Include="IDictItemsDAL.cs" />

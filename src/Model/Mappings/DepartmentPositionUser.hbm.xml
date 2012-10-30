@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="ADSB.Model" assembly="ADSB.Model">
-    <class name="DepartmentPosition">
-       <id name="DeptPositionID">
+    <class name="DepartmentPositionUser">
+       <id name="SeqNo">
          <generator class="identity"/>
        </id>
-       <property name="DeptID"/>
-       <property name="PositionID"/>
+       <property name="DeptPostion"/>
+       <property name="UserID"/>
        <property name="CreateBy"/>
-       <property name="CreateDate"/>
        <property name="CreatorName"/>
+       <property name="CreateDate"/>
     </class>
 </hibernate-mapping>

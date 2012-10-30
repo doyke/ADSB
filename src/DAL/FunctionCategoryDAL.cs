@@ -1,12 +1,12 @@
 ﻿/*
 版权所有：版权所有(C) 2012
 文件名称：FunctionCategoryDAL.cs
-系统编号：ADSB_SYS001
+系统编号：BF_SYS002
 系统名称：ADSB框架
-组件编号：ADSB_CN002
-组件名称：基本表
+组件编号：BF_CN002
+组件名称：权限设计
 设计作者：自动生成
-完成日期：2012-09-10
+完成日期：2012-10-31
 内容摘要：FunctionCategoryDAL数据类
 */
 
@@ -23,7 +23,7 @@ namespace ADSB.DAL
 {
     /// <summary>
     /// 类 名 称：FunctionCategoryDAL
-    /// 完成日期：2012-09-10
+    /// 完成日期：2012-10-31
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    

@@ -1,13 +1,13 @@
 ﻿/*
 版权所有：版权所有(C) 2012
-文件名称：DepartmentPositionBLL.cs
+文件名称：AuthorizationBLL.cs
 系统编号：BF_SYS002
 系统名称：ADSB框架
 组件编号：BF_CN002
 组件名称：权限设计
 设计作者：自动生成
 完成日期：2012-10-31
-内容摘要：DepartmentPositionBLL业务类
+内容摘要：AuthorizationBLL业务类
 */
 
 using System;
@@ -23,14 +23,14 @@ using ADSB.DAL;
 namespace ADSB.BLL
 {
     /// <summary>
-    /// 类 名 称：DepartmentPositionBLL
+    /// 类 名 称：AuthorizationBLL
     /// 完成日期：2012-10-31
     /// 编码作者：自动生成
     /// 内容摘要：包含接口操作的实现
     /// </summary>    
-    public class DepartmentPositionBLL : IDepartmentPositionBLL
+    public class AuthorizationBLL : IAuthorizationBLL
     {
-        IDepartmentPositionDAL dal = new DepartmentPositionDAL();
+        IAuthorizationDAL dal = new AuthorizationDAL();
         
         #region 自动生成
         /// <summary>
@@ -38,9 +38,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="model">实体</param>
         /// <returns>主键值</returns>
-        public object Add(DepartmentPosition model)
+        public object Add(Authorization model)
         {
-            return dal.Add<DepartmentPosition>(model);
+            return dal.Add<Authorization>(model);
         }
         
         /// <summary>
@@ -48,9 +48,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="key">关键字值</param>
         /// <returns>实体</returns>
-        public DepartmentPosition GetModel(System.Int32 key)
+        public Authorization GetModel(System.String key)
         {
-            IList<DepartmentPosition> lstData = dal.GetList<DepartmentPosition>(m => m.DeptPositionID == key);
+            IList<Authorization> lstData = dal.GetList<Authorization>(m => m.FunctionID == key);
 
             if (lstData != null && lstData.Count > 0)
             {
@@ -64,18 +64,18 @@ namespace ADSB.BLL
         /// 更新
         /// </summary>
         /// <param name="model">实体</param>
-        public void Update(DepartmentPosition model)
+        public void Update(Authorization model)
         {
-            dal.Update<DepartmentPosition>(model);
+            dal.Update<Authorization>(model);
         }
 
         /// <summary>
         /// 删除
         /// </summary>
         /// <param name="model">实体</param>
-        public void Delete(DepartmentPosition model)
+        public void Delete(Authorization model)
         {
-            dal.Delete<DepartmentPosition>(model);
+            dal.Delete<Authorization>(model);
         }
 
         /// <summary>
@@ -83,9 +83,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="condition">判断条件</param>
         /// <returns></returns>
-        public bool IsExists(Expression<Func<DepartmentPosition, bool>> condition)
+        public bool IsExists(Expression<Func<Authorization, bool>> condition)
         {
-            return dal.IsExists<DepartmentPosition>(condition);
+            return dal.IsExists<Authorization>(condition);
         }
 
         /// <summary>
@@ -93,9 +93,9 @@ namespace ADSB.BLL
         /// </summary>
         /// <param name="condition">过滤条件</param>
         /// <returns>数据列表</returns>
-        public IList<DepartmentPosition> GetList(Expression<Func<DepartmentPosition, bool>> condition)
+        public IList<Authorization> GetList(Expression<Func<Authorization, bool>> condition)
         {
-            return dal.GetList<DepartmentPosition>(condition);
+            return dal.GetList<Authorization>(condition);
         }
         
         /// <summary>
@@ -106,9 +106,9 @@ namespace ADSB.BLL
         /// <param name="pageSize">页大小</param>
         /// <param name="rowCount">总记录数</param>        
         /// <returns>数据列表</returns>
-        public IList<DepartmentPosition> GetList(Expression<Func<DepartmentPosition, bool>> condition, int pageIndex, int pageSize, out int rowCount)
+        public IList<Authorization> GetList(Expression<Func<Authorization, bool>> condition, int pageIndex, int pageSize, out int rowCount)
         {
-            return dal.GetList<DepartmentPosition>(condition, pageIndex, pageSize, out rowCount);
+            return dal.GetList<Authorization>(condition, pageIndex, pageSize, out rowCount);
         }
 
         /// <summary>
@@ -120,9 +120,9 @@ namespace ADSB.BLL
         /// <param name="rowCount">总记录数</param>
         /// <param name="pageCount">总页数</param>
         /// <returns>数据列表</returns>
-        public IList<DepartmentPosition> GetList(Expression<Func<DepartmentPosition, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
+        public IList<Authorization> GetList(Expression<Func<Authorization, bool>> condition, int pageIndex, int pageSize, out int rowCount, out int pageCount)
         {
-            return dal.GetList<DepartmentPosition>(condition, pageIndex, pageSize, out rowCount, out pageCount);
+            return dal.GetList<Authorization>(condition, pageIndex, pageSize, out rowCount, out pageCount);
         }
         #endregion
     }

@@ -38,18 +38,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizationBLL.cs" />
     <Compile Include="AuthorizeBLL.cs" />
     <Compile Include="CommonService.cs" />
     <Compile Include="DepartmentBLL.cs" />
     <Compile Include="DepartmentPositionBLL.cs" />
+    <Compile Include="DepartmentPositionUserBLL.cs" />
     <Compile Include="DepartmentUserBLL.cs" />
     <Compile Include="DictBLL.cs" />
     <Compile Include="DictItemsBLL.cs" />
     <Compile Include="FunctionCategoryBLL.cs" />
     <Compile Include="FunctionsBLL.cs" />
+    <Compile Include="IAuthorizationBLL.cs" />
     <Compile Include="IAuthorizeBLL.cs" />
     <Compile Include="IDepartmentBLL.cs" />
     <Compile Include="IDepartmentPositionBLL.cs" />
+    <Compile Include="IDepartmentPositionUserBLL.cs" />
     <Compile Include="IDepartmentUserBLL.cs" />
     <Compile Include="IDictBLL.cs" />
     <Compile Include="IDictItemsBLL.cs" />
