@@ -27,7 +27,7 @@ namespace ADSB.UI.UserManage
             if (!IsPostBack)
             {
                 InitUI();
-                this.BindDept();
+                // this.BindDept();
             }
         }
 
@@ -80,7 +80,7 @@ namespace ADSB.UI.UserManage
                 txtSafeA.Value = model.Answer;
                 txtRemark.Value = model.Remark;
 
-                ddlDept.SelectedValue = duBll.GetModel(id).DeptID.ToString();
+                // ddlDept.SelectedValue = duBll.GetModel(id).DeptID.ToString();
             }
         }
 
@@ -141,13 +141,13 @@ namespace ADSB.UI.UserManage
                 user.UserID = Guid.NewGuid().ToString();
                 user.CreateDate = DateTime.Now;
                 object userID = bll.Add(user);
-                this.SaveDepartmentUser((user as Users).UserID);
+                // this.SaveDepartmentUser((user as Users).UserID);
                 WebCommon.ResetControl(this.form1);
             }
             else if (Mode == OperateMode.UPDATE) // 更新
             {
                 bll.Update(user);
-                this.SaveDepartmentUser(id);
+                // this.SaveDepartmentUser(id);
             }
 
             WebCommon.DialogSuccessMsg(this, "保存成功！");
@@ -159,27 +159,27 @@ namespace ADSB.UI.UserManage
         /// <param name="userId"></param>
         private void SaveDepartmentUser(string userId)
         {   
-            string dept = ddlDept.SelectedValue;
-            DepartmentUser duModel = new DepartmentUser();
+            //string dept = ddlDept.SelectedValue;
+            //DepartmentUser duModel = new DepartmentUser();
 
-            if (string.IsNullOrEmpty(dept)) 
-            {
-                return;
-            }
+            //if (string.IsNullOrEmpty(dept)) 
+            //{
+            //    return;
+            //}
 
-            duModel.UserID = userId;
-            duModel.UserName = txtUserName.Value.Trim();
-            duModel.DeptID = dept;
-            duModel.DeptName = ddlDept.SelectedItem.Text;
+            //duModel.UserID = userId;
+            //duModel.UserName = txtUserName.Value.Trim();
+            //duModel.DeptID = dept;
+            //duModel.DeptName = ddlDept.SelectedItem.Text;
 
-            if (Mode == OperateMode.ADD)
-            {
-                duBll.Add(duModel);
-            }
-            else
-            {
-                duBll.Update(duModel);
-            }
+            //if (Mode == OperateMode.ADD)
+            //{
+            //    duBll.Add(duModel);
+            //}
+            //else
+            //{
+            //    duBll.Update(duModel);
+            //}
         }
     }
 }

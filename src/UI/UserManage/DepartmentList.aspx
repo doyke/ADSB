@@ -25,9 +25,9 @@
                 <asp:BoundField DataField="Fax" HeaderText="传真" />
                 <asp:BoundField DataField="Remark" HeaderText="备注" />                
                 <asp:TemplateField HeaderText="操作">
-                    <ItemTemplate>
-                        <a href='UserList.aspx?deptid=<%# Eval("DeptID") %>'>查看用户</a>
+                    <ItemTemplate>                        
                         <a href='DepartmentEdit.aspx?mode=update&deptid=<%# Eval("DeptID") %>'>修改</a>
+                        <a href='.aspx?mode=update&deptid=<%# Eval("DeptID") %>'>岗位</a>
                         <asp:LinkButton ID="btnDataDelete" runat="server" CssClass="delete" CommandName="del"
                             CommandArgument='<%# Eval("DeptID") %>'>删除</asp:LinkButton>
                     </ItemTemplate>

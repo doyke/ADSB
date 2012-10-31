@@ -75,7 +75,8 @@
                 <li class="row">
                     <label class="label">安全问题答案：</label>
                     <p class="value"><input type="text" runat="server" id="txtSafeA"/></p>
-                </li> 
+                </li>
+                <!--  
                 <li class="row">
                     <label class="label require"><span>*</span>部门：</label>
                     <p class="value">
@@ -83,7 +84,8 @@
                             
                         </asp:DropDownList>
                     </p>
-                </li> 
+                </li>
+                --> 
                 <li class="row whole_row">
                     <label class="label"></label>
                     <p class="value"><input type="submit" runat="server" class="bt_submit jui_button" value="保存" id="Submit1" onserverclick="btnSubmit_Click"/><a href="UserList.aspx" class="jui_button">返回</a></p>

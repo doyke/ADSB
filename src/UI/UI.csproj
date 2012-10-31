@@ -139,6 +139,7 @@
     <Content Include="SysManage\DictList.aspx" />
     <Content Include="UserManage\DepartmentEdit.aspx" />
     <Content Include="UserManage\DepartmentList.aspx" />
+    <Content Include="UserManage\DeptPosiList.aspx" />
     <Content Include="UserManage\PositionEdit.aspx" />
     <Content Include="UserManage\PositionList.aspx" />
     <Content Include="UserManage\UserEdit.aspx" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="UserManage\DepartmentList.aspx.designer.cs">
       <DependentUpon>DepartmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\DeptPosiList.aspx.cs">
+      <DependentUpon>DeptPosiList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\DeptPosiList.aspx.designer.cs">
+      <DependentUpon>DeptPosiList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManage\PositionEdit.aspx.cs">
       <DependentUpon>PositionEdit.aspx</DependentUpon>
