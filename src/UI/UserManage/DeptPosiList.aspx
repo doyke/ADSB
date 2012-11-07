@@ -24,11 +24,13 @@
                         <%# Container.DataItemIndex + 1 %>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="PositionName" HeaderText="岗位名称" />                
-                <asp:BoundField DataField="Remark" HeaderText="备注" />          
+                <asp:BoundField DataField="PositionName" HeaderText="岗位名称" />
+                <asp:BoundField DataField="Remark" HeaderText="备注" />
                 <asp:TemplateField HeaderText="操作">
-                    <ItemTemplate>                                                
-                        <asp:LinkButton ID="btnDataDelete" runat="server" CssClass="delete" CommandName="del"
+                    <ItemTemplate>
+                        <asp:LinkButton ID="btnDataDelete" runat="server" 
+                            CssClass="delete" 
+                            CommandName="del"
                             CommandArgument='<%# Eval("DepartmentPositionId") %>'>删除</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
