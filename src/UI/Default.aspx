@@ -21,6 +21,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:Button ID="btn" runat="server" Text="点击我" OnClick="btn_Click" />
     <!-- 顶部 -->
     <div id="top">
         <div id="sysinfo">

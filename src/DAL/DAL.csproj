@@ -51,6 +51,7 @@
     <Compile Include="AuthorizationDAL.cs" />
     <Compile Include="AuthorizeDAL.cs" />
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="DALHelper.cs" />
     <Compile Include="DepartmentDAL.cs" />
     <Compile Include="DepartmentPositionDAL.cs" />
     <Compile Include="DepartmentPositionUserDAL.cs" />

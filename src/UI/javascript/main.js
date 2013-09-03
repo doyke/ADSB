@@ -469,27 +469,3 @@ function dialogConfirm(message, callback, callbackParams)
 }
 /* ======================= jQuery Dialog 结束 ================================== */
 
-/// 打开弹出窗口
-/// type: 可选值modal,modeless,或为空（默认值）
-function openWin(url, title, width, height, type) {
-    var toUrl = "/AgencyCustomer/Popup.htm?t=" + new Date().getTime();
-
-    if (type && (type == "modal" || type == "modeless" )) {
-        var params = [];
-        
-        params[0] = url
-        params[1] = title;
-
-        if (type == "modal") {
-            window.showModalDialog(toUrl, params, 'top:50;left:50;dialogWidth:' + width + 'px;dialogHeight:' + height + 'px;scrollbars:yes;resizable:yes;');
-        }
-        else {
-            window.showModelessDialog(toUrl, params, 'top:50;left:50;dialogWidth:' + width + 'px;dialogHeight:' + height + 'px;scrollbars:yes;resizable:yes;');
-        }
-    }
-    else {
-        toUrl += "&url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title);
-        window.open(toUrl, "_target", 'top=50,left=50,width=' + width + ',height=' + height + ',scrollbars=yes,resizable=yes');
-    }
-}
-
