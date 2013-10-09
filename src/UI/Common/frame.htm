@@ -42,7 +42,7 @@
 	{
 		out ='<iframe src="';
 		out += innerPageURL;
-		out += '" height=100% width=100% frameBorder=no onload="autoHeight(this);"></iframe>';
+		out += '" height=100% width=100% frameBorder=no id="mainFrame" onload="autoHeight(this);"></iframe>';
 		document.write(out);
 	}
 
@@ -70,6 +70,12 @@
 		writeFrame();
 		/*生成页面结束内容*/
 		writeFoot();
+	}
+
+	window.onresize = function(){
+		var frame = document.getElementById("mainFrame");
+
+		autoHeight(frame);
 	}
 	loadPage();
 </script>
