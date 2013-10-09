@@ -426,7 +426,7 @@ function dialogConfirm(message, callback, callbackParams) {
 // type: 可选值modal,modeless,或为空（默认值）
 
 function openWin(url, title, width, height, type) {
-    var toUrl = "/AgencyCustomer/Popup.htm?t=" + new Date().getTime();
+    var toUrl = "/Common/frame.htm?t=" + new Date().getTime();
 
     if (type && (type == "modal" || type == "modeless")) {
         var params = [];
