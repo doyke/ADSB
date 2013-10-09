@@ -1,4 +1,5 @@
-﻿<script type="text/javascript">
+<script type="text/javascript">
+
 	var innerPageURL;
 	var title;
 
@@ -8,7 +9,7 @@
 	        return svalue ? svalue[1] : svalue;
 	    }
 	}
-
+	
 	/*取出输入参数*/
 	function getInPara() {
 	    // 模态窗口参数
@@ -18,7 +19,7 @@
 	        title = inPara[1];
 	    }
 	    else { // 普通窗口参数
-	        innerPageURL = decodeURIComponent(Request.QueryString("url"));
+	        innerPageURL = decodeURIComponent(Request.QueryString("url"));	        
 	        title = decodeURIComponent(Request.QueryString("title"));
 	    }
 	}
@@ -27,7 +28,8 @@
 	{
 		out = "<html>"
 		out += "<head>"
-		out += "<title>";
+		out += getCss();
+		out += "<title>";		
 		out += title;
 		out += "</title>"
 		out += "</head>";
@@ -40,7 +42,7 @@
 	{
 		out ='<iframe src="';
 		out += innerPageURL;
-		out += '" height=100% width=100% frameBorder=no ></iframe>';
+		out += '" height=100% width=100% frameBorder=no onload="autoHeight(this);"></iframe>';
 		document.write(out);
 	}
 
@@ -50,7 +52,15 @@
 		out += "</body>";
 		out += "</html>";
 	}
-	
+
+	function getCss(){
+		return "<style type='text/css'>body,table,tr,td{padding:0;margin:0;}body{overflow:hidden}</style>";
+	}
+
+	function autoHeight(theFrame){
+		theFrame.style.height = theFrame.document.documentElement.offsetHeight;
+	}
+
 	function loadPage() {
 	    /*取出输入参数*/
 	    getInPara();
@@ -61,6 +71,5 @@
 		/*生成页面结束内容*/
 		writeFoot();
 	}
-	
 	loadPage();
 </script>
